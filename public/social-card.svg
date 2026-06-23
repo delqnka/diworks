@@ -1,0 +1,25 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" rx="36" fill="#F6F2ED"/>
+  <rect x="36" y="36" width="1128" height="558" rx="28" fill="white"/>
+  <rect x="714" y="104" width="362" height="422" rx="28" fill="#111111"/>
+  <rect x="96" y="104" width="548" height="422" rx="28" fill="#FBF8F4" stroke="#E8E0D6"/>
+  <circle cx="120" cy="128" r="10" fill="#111111"/>
+  <text x="144" y="136" fill="#111111" font-family="Arial, sans-serif" font-size="30" font-weight="700">DiWorks</text>
+  <text x="96" y="228" fill="#111111" font-family="Arial, sans-serif" font-size="78" font-weight="700">Custom websites</text>
+  <text x="96" y="310" fill="#111111" font-family="Arial, sans-serif" font-size="78" font-weight="700">with booking</text>
+  <text x="96" y="408" fill="#6A655A" font-family="Arial, sans-serif" font-size="32">Premium websites for service businesses that let clients book</text>
+  <text x="96" y="452" fill="#6A655A" font-family="Arial, sans-serif" font-size="32">without leaving your own site.</text>
+  <rect x="770" y="154" width="250" height="44" rx="22" fill="white"/>
+  <text x="816" y="184" fill="#111111" font-family="Arial, sans-serif" font-size="24" font-weight="700">Integrated booking</text>
+  <rect x="770" y="234" width="250" height="120" rx="24" fill="#1B1B1B" stroke="#2D2D2D"/>
+  <text x="796" y="284" fill="white" font-family="Arial, sans-serif" font-size="30" font-weight="700">Facial treatment</text>
+  <text x="796" y="324" fill="#DDD6CB" font-family="Arial, sans-serif" font-size="24">Tuesday 11:00 confirmed</text>
+  <rect x="770" y="390" width="136" height="42" rx="21" fill="#F6F2ED"/>
+  <rect x="916" y="390" width="104" height="42" rx="21" fill="#F6F2ED"/>
+  <text x="799" y="417" fill="#111111" font-family="Arial, sans-serif" font-size="20" font-weight="700">Your domain</text>
+  <text x="943" y="417" fill="#111111" font-family="Arial, sans-serif" font-size="20" font-weight="700">No redirects</text>
+  <circle cx="1050" cy="476" r="54" fill="#F6F2ED"/>
+  <circle cx="1028" cy="458" r="8" fill="#111111"/>
+  <circle cx="1072" cy="458" r="8" fill="#111111"/>
+  <path d="M1017 494C1026.67 505.333 1038 510 1050 510C1062 510 1073.33 505.333 1083 494" stroke="#111111" stroke-width="8" stroke-linecap="round"/>
+</svg>
