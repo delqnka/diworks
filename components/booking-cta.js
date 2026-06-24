@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect } from "react";
 import { useBooking } from "@clicka1/booking";
 
 export function BookingCta({ children, className, service, fallbackHref = "mailto:hello@diworks.co" }) {
@@ -7,7 +8,12 @@ export function BookingCta({ children, className, service, fallbackHref = "mailt
   const salonSlug = process.env.NEXT_PUBLIC_SALON_SLUG;
   const { open, error } = useBooking();
 
-  if (!salonSlug || error) {
+  useEffect(() => {
+    if (!error) return;
+    console.error("[DiWorks booking] Provider reported an error:", error);
+  }, [error]);
+
+  if (!salonSlug) {
     return (
       <a className={className} href={fallbackHref}>
         {children}
