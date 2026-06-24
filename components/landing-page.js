@@ -228,10 +228,18 @@ export function LandingPage({ locale, content }) {
               </div>
             </div>
             <div className="demo-actions">
-              <a className="button button-primary" href={`mailto:hello@diworks.co?subject=${encodeURIComponent(content.demoSubject)}`}>
+              <BookingCta
+                className="button button-primary"
+                fallbackHref={`mailto:hello@diworks.co?subject=${encodeURIComponent(content.demoSubject)}`}
+              >
                 {content.demoPrimary}
-              </a>
-              <BookingCta className="button button-ghost">{content.demoSecondary}</BookingCta>
+              </BookingCta>
+              <BookingCta
+                className="button button-ghost"
+                fallbackHref={`mailto:hello@diworks.co?subject=${encodeURIComponent(content.emailSubject)}`}
+              >
+                {content.demoSecondary}
+              </BookingCta>
             </div>
           </div>
         </section>
