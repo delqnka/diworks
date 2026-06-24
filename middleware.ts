@@ -1,10 +1,7 @@
+import { NextResponse } from "next/server";
+
 export const config = {
-  matcher: [
-    "/admin",
-    "/admin/:path*",
-    "/_next/:path*",
-    "/api/:path*",
-  ],
+  matcher: ["/admin", "/admin/:path*", "/_next/:path*", "/api/:path*"],
 };
 
 const ENGINE_ORIGIN =
@@ -14,6 +11,18 @@ const ENGINE_ORIGIN =
 
 export default async function middleware(request: Request): Promise<Response> {
   const incoming = new URL(request.url);
+  const pathname = incoming.pathname;
+  const referer = request.headers.get("referer");
+  const refererUrl = referer ? new URL(referer) : null;
+  const isAdminPath = pathname === "/admin" || pathname.startsWith("/admin/");
+  const isAdminReferer =
+    refererUrl?.host === incoming.host &&
+    (refererUrl.pathname === "/admin" || refererUrl.pathname.startsWith("/admin/"));
+
+  if (!isAdminPath && !isAdminReferer) {
+    return NextResponse.next();
+  }
+
   const target = new URL(incoming.pathname + incoming.search, ENGINE_ORIGIN);
 
   const headers = new Headers(request.headers);
