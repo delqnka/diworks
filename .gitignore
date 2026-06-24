@@ -11,3 +11,7 @@ coverage/
 .env.local
 .env.*.local
 !.env.example
+!vendor/
+!vendor/clicka-booking/
+!vendor/clicka-booking/dist/
+!vendor/clicka-booking/dist/**
