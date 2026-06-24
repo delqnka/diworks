@@ -1,5 +1,6 @@
 import { LandingPage } from "@/components/landing-page";
 import { siteContent } from "@/components/site-data";
+import { AppShell } from "@/components/app-shell";
 
 export const metadata = {
   title: "Custom Websites with Integrated Booking",
@@ -35,5 +36,9 @@ export const metadata = {
 };
 
 export default function HomePage() {
-  return <LandingPage locale="en" content={siteContent.en} />;
+  return (
+    <AppShell locale="en-US">
+      <LandingPage locale="en" content={siteContent.en} />
+    </AppShell>
+  );
 }

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { BookingCta } from "@/components/booking-cta";
 import { JsonLd } from "@/components/json-ld";
 
 function Flow({ items }) {
@@ -33,9 +34,7 @@ export function LandingPage({ locale, content }) {
             <a className="button button-ghost" href="#how-it-works">
               {content.navHow}
             </a>
-            <a className="button button-primary" href={`mailto:hello@diworks.co?subject=${encodeURIComponent(content.emailSubject)}`}>
-              {content.navCta}
-            </a>
+            <BookingCta className="button button-primary">{content.navCta}</BookingCta>
           </div>
         </div>
       </header>
@@ -50,9 +49,7 @@ export function LandingPage({ locale, content }) {
               </h1>
               <p className="lead">{content.heroLead}</p>
               <div className="hero-actions">
-                <a className="button button-primary" href={`mailto:hello@diworks.co?subject=${encodeURIComponent(content.emailSubject)}`}>
-                  {content.navCta}
-                </a>
+                <BookingCta className="button button-primary">{content.navCta}</BookingCta>
                 <a className="button button-ghost" href="#demo">
                   {content.heroSecondary}
                 </a>
@@ -234,9 +231,7 @@ export function LandingPage({ locale, content }) {
               <a className="button button-primary" href={`mailto:hello@diworks.co?subject=${encodeURIComponent(content.demoSubject)}`}>
                 {content.demoPrimary}
               </a>
-              <a className="button button-ghost" href={`mailto:hello@diworks.co?subject=${encodeURIComponent(content.emailSubject)}`}>
-                {content.demoSecondary}
-              </a>
+              <BookingCta className="button button-ghost">{content.demoSecondary}</BookingCta>
             </div>
           </div>
         </section>
@@ -261,9 +256,7 @@ export function LandingPage({ locale, content }) {
                   <li key={item}>{item}</li>
                 ))}
               </ul>
-              <a className="button button-primary" href={`mailto:hello@diworks.co?subject=${encodeURIComponent(content.emailSubject)}`}>
-                {content.navCta}
-              </a>
+              <BookingCta className="button button-primary">{content.navCta}</BookingCta>
             </div>
           </div>
         </section>
@@ -293,9 +286,7 @@ export function LandingPage({ locale, content }) {
             </h2>
             <p>{content.ctaText}</p>
             <div className="hero-actions">
-              <a className="button button-primary" href={`mailto:hello@diworks.co?subject=${encodeURIComponent(content.emailSubject)}`}>
-                {content.navCta}
-              </a>
+              <BookingCta className="button button-primary">{content.navCta}</BookingCta>
               <a className="button button-ghost" href="mailto:hello@diworks.co">
                 hello@diworks.co
               </a>

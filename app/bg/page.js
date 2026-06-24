@@ -1,5 +1,6 @@
 import { LandingPage } from "@/components/landing-page";
 import { siteContent } from "@/components/site-data";
+import { AppShell } from "@/components/app-shell";
 
 export const metadata = {
   title: "Къстъм сайтове с интегрирано онлайн записване",
@@ -35,5 +36,9 @@ export const metadata = {
 };
 
 export default function BulgarianPage() {
-  return <LandingPage locale="bg" content={siteContent.bg} />;
+  return (
+    <AppShell locale="bg-BG">
+      <LandingPage locale="bg" content={siteContent.bg} />
+    </AppShell>
+  );
 }
