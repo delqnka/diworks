@@ -1,6 +1,6 @@
 "use client";
 
-import { useBooking } from "@/vendor/clicka-booking/dist/index.js";
+import { useBooking } from "@clicka1/booking";
 
 export function BookingCta({ children, className, service, fallbackHref = "mailto:hello@diworks.co" }) {
   const consultationService = process.env.NEXT_PUBLIC_BOOKING_SERVICE_ID;

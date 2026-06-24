@@ -1,5 +1,5 @@
 import "./globals.css";
-import "../vendor/clicka-booking/dist/booking.css";
+import "@clicka1/booking/styles.css";
 
 export const metadata = {
   metadataBase: new URL("https://diworks.co"),

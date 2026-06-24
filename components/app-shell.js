@@ -1,6 +1,6 @@
 "use client";
 
-import { BookingProvider } from "@/vendor/clicka-booking/dist/index.js";
+import { BookingProvider } from "@clicka1/booking";
 
 export function AppShell({ children, locale }) {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
