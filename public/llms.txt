@@ -1,0 +1,28 @@
+# DiWorks
+
+> Custom websites with built-in booking systems for service businesses. Accept bookings, deposits and manage appointments from a single site — no third-party booking pages, no platforms.
+
+Founder: Delyana. Based in Bulgaria, working with service businesses across Europe, the UK and the US (English and Bulgarian).
+
+## What DiWorks does
+
+- Custom-built websites tailored to each service business
+- Integrated booking system (powered by Clicka) embedded directly in the site
+- Deposit collection and appointment management from one dashboard
+- Bilingual support (English / Bulgarian) where needed
+
+## Pages
+
+- [Home (English)](https://diworks.co/): Hero, portfolio, process, about, contact
+- [Home (Bulgarian)](https://diworks.co/bg): Bulgarian version of the landing page
+- [Booking demo](https://diworks.co/booking): Live demo of the integrated booking flow
+
+## Selected work
+
+- [Urban by Delyana](https://www.salonurban.online/en): Bilingual website for a hair-coloring salon in Varna
+- Kozrlab: Car detailing studio in Varna with custom site and Telegram bot integration
+- Salon Paradise (concept): Concept site for a face treatment salon
+
+## Contact
+
+- Email: hello@diworks.co
