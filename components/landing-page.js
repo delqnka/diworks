@@ -1,5 +1,10 @@
 import Link from "next/link";
 import { BookingCta } from "@/components/booking-cta";
+import { CinematicHero } from "@/components/cinematic-hero";
+import { FeaturesHeading } from "@/components/features-heading";
+import { AboutSection } from "@/components/about-section";
+import { MissionSection } from "@/components/mission-section";
+import { PortfolioSection } from "@/components/portfolio-section";
 import { JsonLd } from "@/components/json-ld";
 
 function Flow({ items }) {
@@ -21,152 +26,39 @@ export function LandingPage({ locale, content }) {
       <a className="skip-link" href="#main-content">
         {locale === "bg" ? "Към съдържанието" : "Skip to content"}
       </a>
-      <header className="site-header">
-        <div className="container nav-shell">
-          <Link className="brand" href={locale === "bg" ? "/bg" : "/"}>
-            <span className="brand-mark" aria-hidden="true"></span>
-            <span>DiWorks</span>
-          </Link>
-          <div className="nav-actions">
-            <Link className="language-switch" href={content.switchHref} lang={locale === "bg" ? "en" : "bg"}>
-              {content.switchLabel}
-            </Link>
-            <a className="button button-ghost" href="#how-it-works">
-              {content.navHow}
-            </a>
-            <BookingCta className="button button-primary">{content.navCta}</BookingCta>
-          </div>
-        </div>
-      </header>
-
       <main id="main-content">
-        <section className="hero section">
-          <div className="container hero-grid">
-            <div className="hero-copy">
-              <p className="eyebrow">{content.heroEyebrow}</p>
-              <h1>
-                {content.heroTitleStart} <span className="serif">{content.heroTitleAccent}</span> {content.heroTitleEnd}
-              </h1>
-              <p className="lead">{content.heroLead}</p>
-              <div className="hero-actions">
-                <BookingCta className="button button-primary">{content.navCta}</BookingCta>
-                <a className="button button-ghost" href="#demo">
-                  {content.heroSecondary}
-                </a>
-              </div>
-              <p className="micro-copy">{content.heroTrust}</p>
-            </div>
+        <CinematicHero content={content} locale={locale} />
 
-            <div className="hero-visual" aria-hidden="true">
-              <div className="showcase">
-                <div className="showcase-glow"></div>
-                <div className="booking-stage">
-                  <div className="mini-site-card">
-                    <div className="mini-site-top">
-                      <span className="dot"></span>
-                      <span className="mini-label">{content.miniSite}</span>
-                    </div>
-                    <div className="mini-site-content">
-                      <div className="mini-heading"></div>
-                      <div className="mini-paragraph"></div>
-                      <div className="mini-paragraph short"></div>
-                    </div>
-                  </div>
+        <MissionSection content={content} />
 
-                  <div className="booking-card">
-                    <div className="booking-card-top">
-                      <span className="booking-badge">{content.bookingBadge}</span>
-                      <span className="booking-status">{content.bookingStatus}</span>
-                    </div>
-                    <div className="booking-card-body">
-                      <div className="booking-row">
-                        <span>{content.bookingService}</span>
-                        <strong>{content.bookingDuration}</strong>
-                      </div>
-                      <div className="booking-row">
-                        <span>{content.bookingTime}</span>
-                        <strong>{content.bookingTimeStatus}</strong>
-                      </div>
-                      <div className="booking-divider"></div>
-                      <div className="booking-pill-row">
-                        {content.bookingPills.map((pill) => (
-                          <span className="booking-pill" key={pill}>
-                            {pill}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
+        <AboutSection content={content} />
 
-                  <div className="metric-card">
-                    <span className="metric-kicker">{content.metricKicker}</span>
-                    <strong>{content.metricText}</strong>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        <PortfolioSection content={content} />
 
-        <section className="section section-soft">
-          <div className="container">
-            <div className="section-intro centered">
-              <p className="eyebrow">{content.whyEyebrow}</p>
-              <h2>
-                {content.whyTitle} <span className="serif">{content.whyAccent}</span>
-              </h2>
-            </div>
-            <div className="comparison-grid">
-              <article className="comparison-card muted-card">
-                <p className="card-label">{content.compareBadLabel}</p>
-                <Flow items={content.compareBadFlow} />
-                <p>{content.compareBadText}</p>
-              </article>
-              <article className="comparison-card accent-card">
-                <p className="card-label">{content.compareGoodLabel}</p>
-                <Flow items={content.compareGoodFlow} />
-                <p>{content.compareGoodText}</p>
-                <div className="benefit-chips">
-                  {content.compareGoodChips.map((chip) => (
-                    <span key={chip}>{chip}</span>
-                  ))}
-                </div>
-              </article>
-            </div>
-          </div>
-        </section>
-
-        <section className="section">
-          <div className="container story-grid">
-            <div className="story-copy">
-              <p className="eyebrow">{content.storyEyebrow}</p>
-              <h2>
-                {content.storyTitle} <span className="serif">{content.storyAccent}</span>
-              </h2>
-              {content.storyParagraphs.map((paragraph) => (
-                <p key={paragraph}>{paragraph}</p>
-              ))}
-            </div>
-            <aside className="founder-note">
-              <p className="quote-mark">“</p>
-              <p className="founder-text">{content.founderQuote}</p>
-              <div className="founder-meta">
-                <strong>{content.founderName}</strong>
-                <span>{content.founderRole}</span>
-              </div>
-            </aside>
-          </div>
-        </section>
-
-        <section className="section section-soft">
+        <section className="section section-dark features-dark">
           <div className="container">
             <div className="section-intro">
               <p className="eyebrow">{content.featuresEyebrow}</p>
-              <h2>{content.featuresTitle}</h2>
+              <FeaturesHeading title={content.featuresTitle} accent={content.featuresAccent} />
+              {content.featuresSubtitle && (
+                <p className="section-lede">{content.featuresSubtitle}</p>
+              )}
             </div>
+          </div>
+          <div className="features-video features-video-bleed">
+            <video
+              src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260402_054547_9875cfc5-155a-4229-8ec8-b7ba7125cbf8.mp4"
+              muted
+              autoPlay
+              loop
+              playsInline
+              preload="auto"
+            />
+          </div>
+          <div className="container">
             <div className="feature-grid">
               {content.features.map(([title, text]) => (
-                <article className="feature-card" key={title}>
+                <article className="feature-card liquid-glass" key={title}>
                   <h3>{title}</h3>
                   <p>{text}</p>
                 </article>
@@ -175,105 +67,63 @@ export function LandingPage({ locale, content }) {
           </div>
         </section>
 
-        <section className="section">
-          <div className="container split-grid">
-            <div>
-              <p className="eyebrow">{content.whoEyebrow}</p>
-              <h2>{content.whoTitle}</h2>
-              <div className="industry-chips">
-                {content.industries.map((item) => (
-                  <span key={item}>{item}</span>
-                ))}
-              </div>
-            </div>
-            <div>
-              <p className="eyebrow">{content.reasonsEyebrow}</p>
-              <ul className="check-list">
-                {content.reasons.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-            </div>
-          </div>
+        <section className="visually-hidden" aria-hidden="true">
+          <h2>Website with built-in booking system for service businesses</h2>
+          <p>DiWorks builds custom websites with integrated booking systems for hair salons, beauty salons, barbershops, wellness studios, clinics, coaches and consultants. No Calendly, no third-party booking pages — everything lives on your own website and brand.</p>
+          <ul>
+            {content.industries.map((item) => (
+              <li key={item}>Custom website with booking system for {item.toLowerCase()}</li>
+            ))}
+          </ul>
+          <p>Features include: built-in online booking, deposit collection, automated appointment reminders, AI pricelist scanner, business dashboard, and branded customer experience.</p>
         </section>
 
-        <section id="how-it-works" className="section section-soft">
-          <div className="container">
-            <div className="section-intro">
+        <section id="how-it-works" className="section section-steps">
+          <div className="container steps-container">
+            <header className="steps-header">
               <p className="eyebrow">{content.stepsEyebrow}</p>
-              <h2>{content.stepsTitle}</h2>
-            </div>
-            <div className="steps-grid">
-              {content.steps.map(([number, title, text]) => (
-                <article className="step-card" key={number}>
-                  <span className="step-number">{number}</span>
-                  <h3>{title}</h3>
-                  <p>{text}</p>
-                </article>
+              <h2 className="steps-title">{content.stepsTitle}</h2>
+            </header>
+            <ol className="steps-rail">
+              {content.steps.map(([number, title, text], i) => (
+                <li className="step-row" key={number}>
+                  <div className="step-rail" aria-hidden="true">
+                    <span className="step-dot" />
+                    {i < content.steps.length - 1 && <span className="step-line" />}
+                  </div>
+                  <div className="step-content">
+                    <span className="step-tag">
+                      {number} <span className="step-tag-sep">/</span> {String(content.steps.length).padStart(2, "0")}
+                    </span>
+                    <h3 className="step-heading">{title}</h3>
+                    <p className="step-text">{text}</p>
+                  </div>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </section>
+
+        <section className="section-pricing">
+          <div className="pricing-block">
+            <p className="eyebrow">{content.pricingEyebrow}</p>
+            <h2 className="pricing-title">{content.pricingTitle}</h2>
+            <div className="pricing-body">
+              {content.pricingBody.map((para) => (
+                <p key={para}>{para}</p>
               ))}
             </div>
+            <BookingCta className="button button-primary pricing-cta">
+              {content.pricingCta}
+            </BookingCta>
           </div>
         </section>
 
-        <section id="demo" className="section">
-          <div className="container demo-panel">
-            <div>
-              <p className="eyebrow">{content.demoEyebrow}</p>
-              <h2>{content.demoTitle}</h2>
-              <p>{content.demoText}</p>
-              <div className="demo-points">
-                {content.demoPoints.map((item) => (
-                  <span key={item}>{item}</span>
-                ))}
-              </div>
-            </div>
-            <div className="demo-actions">
-              <BookingCta
-                className="button button-primary"
-                fallbackHref={`mailto:hello@diworks.co?subject=${encodeURIComponent(content.demoSubject)}`}
-              >
-                {content.demoPrimary}
-              </BookingCta>
-              <BookingCta
-                className="button button-ghost"
-                fallbackHref={`mailto:hello@diworks.co?subject=${encodeURIComponent(content.emailSubject)}`}
-              >
-                {content.demoSecondary}
-              </BookingCta>
-            </div>
-          </div>
-        </section>
-
-        <section className="section section-soft">
-          <div className="container">
-            <div className="section-intro">
-              <p className="eyebrow">{content.pricingEyebrow}</p>
-              <h2>{content.pricingTitle}</h2>
-            </div>
-            <div className="pricing-card">
-              <div>
-                <p className="price-label">{content.pricingLabel}</p>
-                <div className="price-line">
-                  <strong>{content.pricingAmount}</strong>
-                  <span>{content.pricingSub}</span>
-                </div>
-                <p>{content.pricingNote}</p>
-              </div>
-              <ul className="pricing-list">
-                {content.pricingItems.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-              <BookingCta className="button button-primary">{content.navCta}</BookingCta>
-            </div>
-          </div>
-        </section>
-
-        <section className="section">
-          <div className="container">
+        <section className="section-faq">
+          <div className="faq-block">
             <div className="section-intro">
               <p className="eyebrow">{content.faqEyebrow}</p>
-              <h2>{content.faqTitle}</h2>
+              <h2 className="faq-title">{content.faqTitle}</h2>
             </div>
             <div className="faq-list">
               {content.faqs.map(([question, answer]) => (
@@ -286,21 +136,6 @@ export function LandingPage({ locale, content }) {
           </div>
         </section>
 
-        <section className="section">
-          <div className="container cta-panel">
-            <p className="eyebrow">{content.ctaEyebrow}</p>
-            <h2>
-              {content.ctaTitle} <span className="serif">{content.ctaAccent}</span>
-            </h2>
-            <p>{content.ctaText}</p>
-            <div className="hero-actions">
-              <BookingCta className="button button-primary">{content.navCta}</BookingCta>
-              <a className="button button-ghost" href="mailto:hello@diworks.co">
-                hello@diworks.co
-              </a>
-            </div>
-          </div>
-        </section>
       </main>
 
       <footer className="site-footer">
@@ -313,8 +148,12 @@ export function LandingPage({ locale, content }) {
             <p>{content.footerText}</p>
           </div>
           <div className="footer-links">
-            <Link href="/">{content.localeLabel}</Link>
-            <Link href="/bg">{content.otherLocaleLabel}</Link>
+            <Link href="/" hrefLang="en" lang="en" aria-label="English">
+              {content.localeLabel}
+            </Link>
+            <Link href="/bg" hrefLang="bg" lang="bg" aria-label="Български">
+              {content.otherLocaleLabel}
+            </Link>
             <a href="mailto:hello@diworks.co">hello@diworks.co</a>
           </div>
         </div>
