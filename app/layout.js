@@ -65,21 +65,9 @@ export default function RootLayout({ children }) {
       className={`${geist.variable} ${inter.variable} ${kanit.variable} ${cormorant.variable} ${instrumentSans.variable}`}
     >
       <head>
-        <link
-          rel="preconnect"
-          href="https://db.onlinewebfonts.com"
-          crossOrigin="anonymous"
-        />
-        <link
-          rel="preconnect"
-          href="https://pub-a282b633397549478fc7e2204fa66fc2.r2.dev"
-          crossOrigin="anonymous"
-        />
-        <link
-          rel="preconnect"
-          href="https://www.clicka.bg"
-          crossOrigin="anonymous"
-        />
+        <link rel="preconnect" href="https://db.onlinewebfonts.com" />
+        <link rel="preconnect" href="https://pub-a282b633397549478fc7e2204fa66fc2.r2.dev" />
+        <link rel="preconnect" href="https://www.clicka.bg" />
         <link
           rel="preload"
           as="style"
