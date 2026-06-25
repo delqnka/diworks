@@ -47,12 +47,14 @@ export function LandingPage({ locale, content }) {
           </div>
           <div className="features-video features-video-bleed">
             <video
-              src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260402_054547_9875cfc5-155a-4229-8ec8-b7ba7125cbf8.mp4"
+              src="https://pub-a282b633397549478fc7e2204fa66fc2.r2.dev/hf_20260402_054547_9875cfc5-155a-4229-8ec8-b7ba7125cbf8.mp4"
               muted
               autoPlay
               loop
               playsInline
-              preload="auto"
+              preload="metadata"
+              aria-hidden="true"
+              tabIndex={-1}
             />
           </div>
           <div className="container">

@@ -40,7 +40,10 @@ export default function HeroPage() {
         muted
         loop
         playsInline
-        src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260619_191346_9d19d66e-86a4-47f7-8dc6-712c1788c3b2.mp4"
+        preload="metadata"
+        aria-hidden="true"
+        tabIndex={-1}
+        src="https://pub-a282b633397549478fc7e2204fa66fc2.r2.dev/hf_20260619_191346_9d19d66e-86a4-47f7-8dc6-712c1788c3b2.mp4"
       />
 
       <nav className={styles.nav}>

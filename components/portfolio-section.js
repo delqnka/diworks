@@ -1,17 +1,18 @@
 "use client";
 
-import { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import Image from "next/image";
 import styles from "./portfolio-section.module.css";
 
-function ProjectCard({ project, index, total, progress }) {
+function ProjectCard({ project, index, total }) {
   const targetScale = 1 - (total - 1 - index) * 0.008;
-  const scale = useTransform(progress, [index / total, 1], [1, targetScale]);
 
   return (
     <div className={styles.cardWrap} style={{ top: `${6 + index * 0.5}rem` }}>
       <div className={styles.cardWrapInner}>
-        <motion.article className={styles.card} style={{ scale }}>
+        <article
+          className={styles.card}
+          style={{ transform: `scale(${targetScale})` }}
+        >
           <header className={styles.cardTop}>
             <div className={styles.cardMeta}>
               <span className={styles.cardNumber}>
@@ -48,14 +49,26 @@ function ProjectCard({ project, index, total, progress }) {
             <div className={styles.cardCol}>
               <div className={`${styles.cardImage} ${styles.imgSmall}`}>
                 {project.images?.[0] ? (
-                  <img src={project.images[0]} alt="" loading="lazy" />
+                  <Image
+                    src={project.images[0]}
+                    alt=""
+                    fill
+                    sizes="(max-width: 768px) 50vw, 240px"
+                    loading="lazy"
+                  />
                 ) : (
                   <div className={styles.placeholder}>image</div>
                 )}
               </div>
               <div className={`${styles.cardImage} ${styles.imgMedium}`}>
                 {project.images?.[1] ? (
-                  <img src={project.images[1]} alt="" loading="lazy" />
+                  <Image
+                    src={project.images[1]}
+                    alt=""
+                    fill
+                    sizes="(max-width: 768px) 50vw, 240px"
+                    loading="lazy"
+                  />
                 ) : (
                   <div className={styles.placeholder}>image</div>
                 )}
@@ -64,31 +77,31 @@ function ProjectCard({ project, index, total, progress }) {
             <div className={styles.cardCol}>
               <div className={`${styles.cardImage} ${styles.imgTall}`}>
                 {project.images?.[2] ? (
-                  <img src={project.images[2]} alt="" loading="lazy" />
+                  <Image
+                    src={project.images[2]}
+                    alt=""
+                    fill
+                    sizes="(max-width: 768px) 90vw, 360px"
+                    loading="lazy"
+                  />
                 ) : (
                   <div className={styles.placeholder}>image</div>
                 )}
               </div>
             </div>
           </div>
-        </motion.article>
+        </article>
       </div>
     </div>
   );
 }
 
 export function PortfolioSection({ content }) {
-  const ref = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start start", "end end"],
-  });
-
   const projects = content.portfolioProjects || [];
   if (projects.length === 0) return null;
 
   return (
-    <section className={styles.section} ref={ref}>
+    <section className={styles.section}>
       {content.portfolioEyebrow && (
         <p className={styles.eyebrow}>{content.portfolioEyebrow}</p>
       )}
@@ -110,7 +123,6 @@ export function PortfolioSection({ content }) {
             project={project}
             index={i}
             total={projects.length}
-            progress={scrollYProgress}
           />
         ))}
       </div>

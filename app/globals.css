@@ -1164,7 +1164,7 @@ img {
   font-family: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, Consolas, monospace;
   font-size: 0.72rem;
   letter-spacing: 0.08em;
-  color: rgba(10, 10, 10, 0.4);
+  color: rgba(10, 10, 10, 0.72);
   margin-bottom: 0.85rem;
   text-transform: uppercase;
 }

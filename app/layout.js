@@ -1,5 +1,25 @@
 import "./globals.css";
 import "@clicka1/booking/styles.css";
+import { Geist, Inter, Kanit } from "next/font/google";
+
+const geist = Geist({
+  subsets: ["latin"],
+  weight: ["300", "400", "500"],
+  display: "swap",
+  variable: "--font-geist"
+});
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["300", "400", "500"],
+  display: "swap",
+  variable: "--font-inter"
+});
+const kanit = Kanit({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
+  display: "swap",
+  variable: "--font-kanit"
+});
 
 export const metadata = {
   metadataBase: new URL("https://diworks.co"),
@@ -28,17 +48,47 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html
+      lang="en"
+      className={`${geist.variable} ${inter.variable} ${kanit.variable}`}
+    >
       <head>
+        <link
+          rel="preconnect"
+          href="https://db.onlinewebfonts.com"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preconnect"
+          href="https://pub-a282b633397549478fc7e2204fa66fc2.r2.dev"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preconnect"
+          href="https://www.clicka.bg"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          as="style"
+          href="https://db.onlinewebfonts.com/c/2bf40ab72ea4897a3fd9b6e48b233a19?family=Garamond"
+        />
         <link
           rel="stylesheet"
           href="https://db.onlinewebfonts.com/c/2bf40ab72ea4897a3fd9b6e48b233a19?family=Garamond"
+          media="print"
+          suppressHydrationWarning
         />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500&family=Inter:wght@300;400;500&family=Kanit:wght@300;400;500;600;700;800;900&display=swap"
+        <noscript>
+          <link
+            rel="stylesheet"
+            href="https://db.onlinewebfonts.com/c/2bf40ab72ea4897a3fd9b6e48b233a19?family=Garamond"
+          />
+        </noscript>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `document.querySelectorAll('link[media="print"][href*="onlinewebfonts"]').forEach(l=>l.media='all');`
+          }}
         />
       </head>
       <body>{children}</body>

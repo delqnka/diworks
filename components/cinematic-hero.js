@@ -8,7 +8,7 @@ import { BookingCta } from "@/components/booking-cta";
 import styles from "./cinematic-hero.module.css";
 
 const VIDEO_SRC =
-  "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260619_191346_9d19d66e-86a4-47f7-8dc6-712c1788c3b2.mp4";
+  "https://pub-a282b633397549478fc7e2204fa66fc2.r2.dev/hf_20260619_191346_9d19d66e-86a4-47f7-8dc6-712c1788c3b2.mp4";
 
 function StaggeredFade({ text, className }) {
   const ref = useRef(null);
@@ -59,8 +59,13 @@ export function CinematicHero({ content, locale = "en" }) {
         muted
         loop
         playsInline
+        preload="metadata"
+        aria-hidden="true"
+        tabIndex={-1}
         src={VIDEO_SRC}
-      />
+      >
+        <track kind="captions" src="/hero-captions.vtt" srcLang="en" label="No dialogue" default />
+      </video>
       <div className={styles.scrim} aria-hidden="true" />
 
       <nav className={styles.nav}>
@@ -155,14 +160,7 @@ export function CinematicHero({ content, locale = "en" }) {
             <StaggeredFade text={content.heroTitleEnd} />
           </h1>
 
-          <motion.p
-            className={styles.lead}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1.4, ease: "easeOut" }}
-          >
-            {content.heroLead}
-          </motion.p>
+          <p className={styles.lead}>{content.heroLead}</p>
         </div>
 
         <div className={styles.bottomGroup}>

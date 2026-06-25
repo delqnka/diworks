@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef } from "react";
+import Image from "next/image";
 import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion";
 import { BookingCta } from "@/components/booking-cta";
 import styles from "./about-section.module.css";
@@ -70,9 +71,12 @@ export function AboutSection({ content }) {
           viewport={{ once: true, margin: "100px" }}
           transition={{ duration: 0.8, ease: EASE }}
         >
-          <img
+          <Image
             src="/delyana-bw.webp"
             alt={`${content.storyAuthor || "Delyana"}, founder of DiWorks`}
+            width={910}
+            height={1138}
+            sizes="(max-width: 768px) 90vw, 455px"
             loading="lazy"
           />
         </motion.figure>
