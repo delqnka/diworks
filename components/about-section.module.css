@@ -81,7 +81,7 @@
   flex-direction: column;
   gap: 0.15rem;
   margin: -1.5rem 0 0;
-  font-family: "Cormorant Garamond", serif;
+  font-family: var(--font-cormorant), "Cormorant Garamond", serif;
 }
 
 .bylineText {
@@ -92,7 +92,7 @@
 }
 
 .bylineName {
-  font-family: "Cormorant Garamond", serif;
+  font-family: var(--font-cormorant), "Cormorant Garamond", serif;
   color: #0a0a0a;
   font-weight: 500;
   font-size: 1.15rem;
@@ -101,7 +101,7 @@
 }
 
 .bylineRole {
-  font-family: "Cormorant Garamond", serif;
+  font-family: var(--font-cormorant), "Cormorant Garamond", serif;
   color: rgba(10, 10, 10, 0.55);
   font-weight: 400;
   font-style: italic;
@@ -111,7 +111,7 @@
 }
 
 .heading {
-  font-family: "Cormorant Garamond", serif;
+  font-family: var(--font-cormorant), "Cormorant Garamond", serif;
   color: #0a0a0a;
   font-weight: 500;
   text-transform: none;

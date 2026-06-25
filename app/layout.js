@@ -1,6 +1,6 @@
 import "./globals.css";
 import "@clicka1/booking/styles.css";
-import { Geist, Inter, Kanit } from "next/font/google";
+import { Geist, Inter, Kanit, Cormorant_Garamond, Instrument_Sans } from "next/font/google";
 
 const geist = Geist({
   subsets: ["latin"],
@@ -19,6 +19,18 @@ const kanit = Kanit({
   weight: ["300", "400", "500", "600", "700", "800", "900"],
   display: "swap",
   variable: "--font-kanit"
+});
+const cormorant = Cormorant_Garamond({
+  subsets: ["latin"],
+  weight: ["500", "600", "700"],
+  display: "swap",
+  variable: "--font-cormorant"
+});
+const instrumentSans = Instrument_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
+  variable: "--font-instrument"
 });
 
 export const metadata = {
@@ -50,7 +62,7 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={`${geist.variable} ${inter.variable} ${kanit.variable}`}
+      className={`${geist.variable} ${inter.variable} ${kanit.variable} ${cormorant.variable} ${instrumentSans.variable}`}
     >
       <head>
         <link
