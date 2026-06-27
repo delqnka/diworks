@@ -45,7 +45,7 @@ export const metadata = {
   creator: "Delyana",
   publisher: "DiWorks",
   icons: {
-    icon: "/logo-mark.svg"
+    icon: "/9-fav.svg"
   },
   openGraph: {
     siteName: "DiWorks",

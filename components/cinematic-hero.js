@@ -1,9 +1,10 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import Link from "next/link";
-import { motion, AnimatePresence, useInView } from "framer-motion";
-import { Menu, X, ArrowRight } from "lucide-react";
+import Image from "next/image";
+import { motion, useInView } from "framer-motion";
+import { ArrowRight } from "lucide-react";
 import { BookingCta } from "@/components/booking-cta";
 import styles from "./cinematic-hero.module.css";
 
@@ -44,13 +45,6 @@ function StaggeredFade({ text, className }) {
 }
 
 export function CinematicHero({ content, locale = "en" }) {
-  const [open, setOpen] = useState(false);
-
-  const navItems = [
-    { label: content.navHow, href: "#how-it-works", type: "anchor" },
-    { label: content.switchLabel, href: content.switchHref, type: "lang" },
-  ];
-
   return (
     <section className={styles.section}>
       <video
@@ -70,87 +64,28 @@ export function CinematicHero({ content, locale = "en" }) {
 
       <nav className={styles.nav}>
         <Link className={styles.brand} href={locale === "bg" ? "/bg" : "/"}>
-          DiWorks
+          <Image src="/9-logo.svg" alt="DiWorks" width={160} height={90} priority unoptimized />
+        </Link>
+
+        <Link
+          className={styles.langSwitch}
+          href={content.switchHref}
+          lang={locale === "bg" ? "en" : "bg"}
+        >
+          {content.switchLabel}
         </Link>
 
         <div className={styles.navLinks}>
-          {navItems.map((item) =>
-            item.type === "lang" ? (
-              <Link
-                key={item.label}
-                className={styles.navLink}
-                href={item.href}
-                lang={locale === "bg" ? "en" : "bg"}
-              >
-                {item.label}
-              </Link>
-            ) : (
-              <a key={item.label} className={styles.navLink} href={item.href}>
-                {item.label}
-              </a>
-            )
-          )}
+          <Link
+            className={styles.navLink}
+            href={content.switchHref}
+            lang={locale === "bg" ? "en" : "bg"}
+          >
+            {content.switchLabel}
+          </Link>
           <BookingCta className={styles.navCtaBtn}>{content.navCta}</BookingCta>
         </div>
-
-        <button
-          className={styles.hamburger}
-          type="button"
-          aria-label={open ? "Close menu" : "Open menu"}
-          onClick={() => setOpen((v) => !v)}
-        >
-          {open ? <X size={22} /> : <Menu size={22} />}
-        </button>
       </nav>
-
-      <AnimatePresence>
-        {open && (
-          <motion.div
-            className={styles.mobileMenu}
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.3, ease: "easeOut" }}
-          >
-            {navItems.map((item, i) => (
-              <motion.span
-                key={item.label}
-                initial={{ opacity: 0, y: -8 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -8 }}
-                transition={{ duration: 0.25, delay: 0.05 + i * 0.06, ease: "easeOut" }}
-              >
-                {item.type === "lang" ? (
-                  <Link
-                    className={styles.mobileLink}
-                    href={item.href}
-                    lang={locale === "bg" ? "en" : "bg"}
-                    onClick={() => setOpen(false)}
-                  >
-                    {item.label}
-                  </Link>
-                ) : (
-                  <a
-                    className={styles.mobileLink}
-                    href={item.href}
-                    onClick={() => setOpen(false)}
-                  >
-                    {item.label}
-                  </a>
-                )}
-              </motion.span>
-            ))}
-            <motion.div
-              initial={{ opacity: 0, y: -8 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -8 }}
-              transition={{ duration: 0.25, delay: 0.05 + navItems.length * 0.06, ease: "easeOut" }}
-            >
-              <BookingCta className={styles.navCtaBtn}>{content.navCta}</BookingCta>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
 
       <div className={styles.inner}>
         <div className={styles.topGroup}>
@@ -164,34 +99,34 @@ export function CinematicHero({ content, locale = "en" }) {
         </div>
 
         <div className={styles.bottomGroup}>
-        <motion.div
-          className={styles.actions}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1.8, ease: "easeOut" }}
-        >
-          <BookingCta className={`${styles.glassBtn} ${styles.glassPrimary}`}>
-            {content.navCta}
-          </BookingCta>
-          <a
-            className={styles.ghostLink}
-            href={locale === "bg" ? "https://www.salonurban.online/bg" : "https://www.salonurban.online/en"}
-            target="_blank"
-            rel="noopener noreferrer"
+          <motion.div
+            className={styles.actions}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1.8, ease: "easeOut" }}
           >
-            {content.heroSecondary}
-            <ArrowRight size={16} strokeWidth={1.6} />
-          </a>
-        </motion.div>
+            <BookingCta className={`${styles.glassBtn} ${styles.glassPrimary}`}>
+              {content.navCta}
+            </BookingCta>
+            <a
+              className={styles.ghostLink}
+              href={locale === "bg" ? "https://www.salonurban.online/bg" : "https://www.salonurban.online/en"}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {content.heroSecondary}
+              <ArrowRight size={16} strokeWidth={1.6} />
+            </a>
+          </motion.div>
 
-        <motion.p
-          className={styles.trust}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 2.2, ease: "easeOut" }}
-        >
-          {content.heroTrust}
-        </motion.p>
+          <motion.p
+            className={styles.trust}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 2.2, ease: "easeOut" }}
+          >
+            {content.heroTrust}
+          </motion.p>
         </div>
       </div>
     </section>

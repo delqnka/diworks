@@ -63,7 +63,8 @@ export const siteContent = {
       "But it did.",
       "While running my salon, I became fascinated by programming. What started as curiosity turned into late nights building websites, experimenting with code and eventually creating my own booking software.",
       "I realised businesses shouldn't have to choose between a beautiful website and a booking system that actually works.",
-      "That's why I built DiWorks."
+      "That's why I started this one-man-show agency Urban Again.",
+      "I build websites for service businesses that are not only beautiful, but genuinely useful - from online bookings and automation to an experience your customers actually enjoy."
     ],
     storyCta: "Let's talk",
     missionEyebrow: "THE MISSION",
@@ -169,11 +170,44 @@ export const siteContent = {
       "Fast turnaround and clear communication",
       "Designed for long term growth"
     ],
+    pillarsEyebrow: "MY FOUR PILLARS",
+    pillarsTitle: "My four pillars",
+    pillarsItems: [
+      ["1×", "Custom & hand-crafted", "Every website is built from scratch around your brand. No recycled templates, no copy-paste themes."],
+      ["2×", "Modern, Fast and premium", "Clean, timeless design that's built to convert - not to follow trends that age in a year."],
+      ["3×", "Built to grow your business", "Designed for real business outcomes - bookings, retention, repeat customers - not just aesthetics."],
+      ["4×", "Direct communication", "You talk to the person actually building it. No account managers, no hand-offs, no telephone game."]
+    ],
+    speedEyebrow: "BUILT FOR 2026",
+    speedTitle: "No WordPress. Just speed.",
+    speedChecks: [
+      "Sub-second page loads",
+      "95+ Lighthouse performance scores",
+      "WCAG-ready accessibility",
+      "SEO-optimized out of the box",
+      "Zero plugin bloat, zero security holes"
+    ],
+    speedBody: [
+      "It's 2026 - there's no reason your website should still run on a 20-year-old PHP CMS with 30 plugins fighting each other.",
+      "I build on a modern stack - Next.js, React and edge infrastructure - so your site loads in under a second, ranks higher in Google and feels instant on every device.",
+      "I obsess over Google Lighthouse scores. Every site I ship is benchmarked for Performance, Accessibility, Best Practices and SEO - and I don't stop until those numbers are green. Because speed isn't a vanity metric - it's bookings you didn't lose to a slow page."
+    ],
+    buildEyebrow: "WHAT I BUILD",
+    buildTitle: "Three things, done well.",
+    buildItems: [
+      ["01", "Landing pages", "High-conversion single-page sites built around one clear goal - bookings, leads or sign-ups."],
+      ["02", "Personal brand sites", "Portfolio and brand websites for founders, creatives and experts who want their work to look as good as it is."],
+      ["03", "Custom-built platforms", "Bespoke web applications tailored to your business. The flagship is my own booking software engine - the same one powering every appointment-based Urban Again website."],
+      ["04", "Website redesigns", "Refresh an outdated site with a faster, cleaner, conversion-focused rebuild - on a modern stack."],
+      ["05", "Membership portals", "Members-only areas for class packs, subscriptions, gated content and recurring customers."],
+      ["06", "AI integrations", "Smart booking assistants, AI chat, automated reminders and pricelist scanners that save you hours every week."],
+      ["07", "Telegram bots", "Custom Telegram bots that let you manage your site from your phone - update prices, edit content, check bookings and get instant alerts, all from a chat window."]
+    ],
     stepsEyebrow: "THE PROCESS",
     stepsTitle: "From first conversation to live website.",
     steps: [
-      ["01", "We talk.", "Tell me about your business, your services, how you currently take bookings and what frustrates you about it. No slides, no forms. Just a conversation."],
-      ["02", "I build it.", "I design and build your website from scratch, then wire the booking system directly into it. You see progress as it happens and shape every decision."],
+      ["01", "We talk.", "Tell me about your business, your services, how you currently take bookings, what frustrates you about it, and what designs fascinate you."],
+      ["02", "I build it.", "I design and build your website from scratch, then wire the booking system directly into it."],
       ["03", "You go live.", "We launch. From that day, your customers book on your website, pay deposits and get confirmations. No third-party platforms, no redirects. Just yours."]
     ],
     demoEyebrow: "LIVE DEMO",
@@ -435,6 +469,39 @@ export const siteContent = {
       "Изградено специално за вашия бизнес",
       "Бърз процес и ясна комуникация",
       "Създадено за дългосрочен растеж"
+    ],
+    pillarsEyebrow: "МОИТЕ ЧЕТИРИ ПРИНЦИПА",
+    pillarsTitle: "Моите четири принципа",
+    pillarsItems: [
+      ["1×", "По поръчка, на ръка", "Всеки сайт се изгражда от нулата около твоя бранд. Без шаблони, без копи-пейст теми."],
+      ["2×", "Модерно, бързо и премиум", "Чист, безвременен дизайн, създаден да конвертира - не да следва тенденции, които остаряват за година."],
+      ["3×", "За растеж на бизнеса", "Проектирано за реален резултат - записвания, връщащи се клиенти, лоялност - не само за визия."],
+      ["4×", "Директна комуникация", "Говориш директно с човека, който прави сайта. Без посредници, без забавяния, без счупен телефон."]
+    ],
+    speedEyebrow: "СЪЗДАДЕН ЗА 2026",
+    speedTitle: "Без WordPress. Само скорост.",
+    speedChecks: [
+      "Зареждане под секунда",
+      "95+ Lighthouse performance",
+      "Готов за WCAG достъпност",
+      "SEO-оптимизиран по подразбиране",
+      "Без излишни плъгини, без дупки в сигурността"
+    ],
+    speedBody: [
+      "2026 е - няма причина сайтът ти все още да върви на 20-годишен PHP CMS с 30 плъгина, които се бият помежду си.",
+      "Изграждам върху модерен стак - Next.js, React и edge инфраструктура - така че сайтът ти да зарежда под секунда, да се класира по-високо в Google и да усеща светкавично на всяко устройство.",
+      "Държа изключително много на резултатите в Google Lighthouse. Всеки сайт, който пускам, се измерва за Performance, Accessibility, Best Practices и SEO - и не спирам, докато тези оценки не светнат в зелено. Защото скоростта не е козметика - тя е записванията, които не загуби заради бавна страница."
+    ],
+    buildEyebrow: "КАКВО ИЗГРАЖДАМ",
+    buildTitle: "Три неща, направени както трябва.",
+    buildItems: [
+      ["01", "Лендинг страници", "Едностранични сайтове с висока конверсия, изградени около една ясна цел - записвания, заявки или регистрации."],
+      ["02", "Сайтове за личен бранд", "Портфолио и брандови сайтове за основатели, творци и експерти, които искат работата им да изглежда толкова добре, колкото е."],
+      ["03", "Платформи по поръчка", "Уеб приложения, изградени специално за твоя бизнес. Флагманът е моят собствен буукинг енджин - същият, който движи всеки сайт на Urban Again с онлайн записвания."],
+      ["04", "Редизайн на сайт", "Обновяване на остарял сайт с по-бърз, по-чист и насочен към конверсия рестарт - на модерен стак."],
+      ["05", "Мембършип портали", "Зони само за членове - класове, абонаменти, заключено съдържание и връщащи се клиенти."],
+      ["06", "AI интеграции", "Умни асистенти за записвания, AI чат, автоматични напомняния и скенери на ценоразписи, които ти спестяват часове седмично."],
+      ["07", "Telegram ботове", "Персонални Telegram ботове, с които управляваш сайта си директно от телефона - сменяш цени, редактираш съдържание, проверяваш записвания и получаваш моментални известия, всичко от един чат."]
     ],
     stepsEyebrow: "ПРОЦЕСЪТ",
     stepsTitle: "От първия разговор до готовия сайт.",

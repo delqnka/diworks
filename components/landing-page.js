@@ -1,5 +1,10 @@
 import Link from "next/link";
+import Image from "next/image";
+import { Check } from "lucide-react";
 import { BookingCta } from "@/components/booking-cta";
+import { Reveal, StaggerItem, CountUp } from "@/components/motion-helpers";
+import { PillarsReveal } from "@/components/pillars-reveal";
+import { BuildPills } from "@/components/build-pills";
 import { CinematicHero } from "@/components/cinematic-hero";
 import { FeaturesHeading } from "@/components/features-heading";
 import { AboutSection } from "@/components/about-section";
@@ -34,6 +39,60 @@ export function LandingPage({ locale, content }) {
         <AboutSection content={content} />
 
         <PortfolioSection content={content} />
+
+        <PillarsReveal
+          eyebrow={content.pillarsEyebrow}
+          title={content.pillarsTitle}
+          items={content.pillarsItems}
+        />
+
+        <section className="section section-speed">
+          <div className="container speed-shell">
+            <Reveal>
+              <p className="eyebrow">{content.speedEyebrow}</p>
+              <h2 className="speed-title">{content.speedTitle}</h2>
+            </Reveal>
+            <Reveal delay={0.1}>
+              <div className="speed-body">
+                {content.speedBody.map((para, i) => (
+                  <p key={i}>{para}</p>
+                ))}
+              </div>
+            </Reveal>
+            <ul className="speed-checks">
+              {content.speedChecks.map((item, i) => {
+                const match = item.match(/^(\d+)\+\s(.*)/);
+                return (
+                  <StaggerItem key={item} index={i} stagger={0.09}>
+                    <span className="speed-check-icon" aria-hidden="true">
+                      <Check size={14} strokeWidth={2.5} />
+                    </span>
+                    <span>
+                      {match ? (
+                        <>
+                          <CountUp to={parseInt(match[1], 10)} suffix="+" /> {match[2]}
+                        </>
+                      ) : (
+                        item
+                      )}
+                    </span>
+                  </StaggerItem>
+                );
+              })}
+            </ul>
+          </div>
+        </section>
+
+        <section className="section section-build">
+          <div className="container build-shell">
+            <Reveal>
+              <header className="build-pill-header">
+                <p className="eyebrow">{content.buildEyebrow}</p>
+                <BuildPills items={content.buildItems} featureIndex={2} />
+              </header>
+            </Reveal>
+          </div>
+        </section>
 
         <section className="section section-dark features-dark">
           <div className="container">
@@ -71,39 +130,13 @@ export function LandingPage({ locale, content }) {
 
         <section className="visually-hidden" aria-hidden="true">
           <h2>Website with built-in booking system for service businesses</h2>
-          <p>DiWorks builds custom websites with integrated booking systems for hair salons, beauty salons, barbershops, wellness studios, clinics, coaches and consultants. No Calendly, no third-party booking pages — everything lives on your own website and brand.</p>
+          <p>DiWorks builds custom websites with integrated booking systems for hair salons, beauty salons, barbershops, wellness studios, clinics, coaches and consultants. No Calendly, no third-party booking pages - everything lives on your own website and brand.</p>
           <ul>
             {content.industries.map((item) => (
               <li key={item}>Custom website with booking system for {item.toLowerCase()}</li>
             ))}
           </ul>
           <p>Features include: built-in online booking, deposit collection, automated appointment reminders, AI pricelist scanner, business dashboard, and branded customer experience.</p>
-        </section>
-
-        <section id="how-it-works" className="section section-steps">
-          <div className="container steps-container">
-            <header className="steps-header">
-              <p className="eyebrow">{content.stepsEyebrow}</p>
-              <h2 className="steps-title">{content.stepsTitle}</h2>
-            </header>
-            <ol className="steps-rail">
-              {content.steps.map(([number, title, text], i) => (
-                <li className="step-row" key={number}>
-                  <div className="step-rail" aria-hidden="true">
-                    <span className="step-dot" />
-                    {i < content.steps.length - 1 && <span className="step-line" />}
-                  </div>
-                  <div className="step-content">
-                    <span className="step-tag">
-                      {number} <span className="step-tag-sep">/</span> {String(content.steps.length).padStart(2, "0")}
-                    </span>
-                    <h3 className="step-heading">{title}</h3>
-                    <p className="step-text">{text}</p>
-                  </div>
-                </li>
-              ))}
-            </ol>
-          </div>
         </section>
 
         <section className="section-pricing">
@@ -145,7 +178,7 @@ export function LandingPage({ locale, content }) {
           <div>
             <Link className="brand footer-brand" href={locale === "bg" ? "/bg" : "/"}>
               <span className="brand-mark" aria-hidden="true"></span>
-              <span>DiWorks</span>
+              <Image src="/9-logo.svg" alt="DiWorks" width={100} height={28} />
             </Link>
             <p>{content.footerText}</p>
           </div>

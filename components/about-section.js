@@ -66,19 +66,35 @@ export function AboutSection({ content }) {
       <div className={styles.inner}>
         <motion.figure
           className={styles.portrait}
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial="hidden"
+          whileInView="visible"
           viewport={{ once: true, margin: "100px" }}
-          transition={{ duration: 0.8, ease: EASE }}
+          variants={{
+            hidden: { opacity: 0, y: 24, clipPath: "inset(0 0 100% 0)" },
+            visible: {
+              opacity: 1,
+              y: 0,
+              clipPath: "inset(0 0 0% 0)",
+              transition: { duration: 1.1, ease: EASE, when: "beforeChildren" },
+            },
+          }}
         >
-          <Image
-            src="/delyana-bw.webp"
-            alt={`${content.storyAuthor || "Delyana"}, founder of DiWorks`}
-            width={910}
-            height={1138}
-            sizes="(max-width: 768px) 90vw, 455px"
-            loading="lazy"
-          />
+          <motion.div
+            className={styles.portraitInner}
+            variants={{
+              hidden: { scale: 1.18 },
+              visible: { scale: 1, transition: { duration: 1.4, ease: EASE } },
+            }}
+          >
+            <Image
+              src="/delyana-bw.webp"
+              alt={`${content.storyAuthor || "Delyana"}, founder of DiWorks`}
+              width={910}
+              height={1138}
+              sizes="(max-width: 768px) 90vw, 455px"
+              loading="lazy"
+            />
+          </motion.div>
         </motion.figure>
 
         <div className={styles.content}>
