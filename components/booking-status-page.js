@@ -29,21 +29,21 @@ export function BookingStatusPage({ locale, variant }) {
       ? "Back to the site"
       : "Try again";
 
-  const secondaryLabel = isBg ? "Пиши ни на hello@diworks.co" : "Email hello@diworks.co";
+  const secondaryLabel = isBg ? "Пиши ни на hello@alternine.co" : "Email hello@alternine.co";
 
   return (
     <main className="booking-status-page">
       <section className="section">
         <div className="container">
           <div className="cta-panel booking-status-panel">
-            <p className="eyebrow">DIWORKS</p>
+            <p className="eyebrow">ALTER NINE</p>
             <h1>{title}</h1>
             <p>{body}</p>
             <div className="hero-actions booking-status-actions">
               <Link className="button button-primary" href={homeHref}>
                 {primaryLabel}
               </Link>
-              <a className="button button-ghost" href="mailto:hello@diworks.co">
+              <a className="button button-ghost" href="mailto:hello@alternine.co">
                 {secondaryLabel}
               </a>
             </div>

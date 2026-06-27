@@ -3,14 +3,16 @@ import { siteContent } from "@/components/site-data";
 import { AppShell } from "@/components/app-shell";
 
 export const metadata = {
-  title: "Custom Websites with Integrated Booking",
+  title: {
+    absolute: "Custom Websites with Built-in Booking — Alter Nine"
+  },
   description:
-    "DiWorks designs custom websites with integrated booking systems so clients can discover, trust, and book without leaving your website.",
+    "Alter Nine builds custom-designed websites with integrated booking for salons, clinics, coaches, and studios. No Calendly, no third-party pages.",
   alternates: {
-    canonical: "https://diworks.co/",
+    canonical: "https://alternine.co/",
     languages: {
-      en: "https://diworks.co/",
-      bg: "https://diworks.co/bg/"
+      en: "https://alternine.co/",
+      bg: "https://alternine.co/bg/"
     }
   },
   keywords: [
@@ -19,19 +21,19 @@ export const metadata = {
     "salon website",
     "clinic website",
     "service business website",
-    "diworks"
+    "alter nine"
   ],
   openGraph: {
-    title: "DiWorks | Custom Websites with Integrated Booking",
+    title: "Custom Websites with Built-in Booking — Alter Nine",
     description:
-      "Premium custom websites with built in booking for modern service businesses.",
-    url: "https://diworks.co/",
+      "Custom-designed websites with integrated booking for salons, clinics, coaches, and studios. No Calendly, no third-party pages.",
+    url: "https://alternine.co/",
     locale: "en_GB"
   },
   twitter: {
-    title: "DiWorks | Custom Websites with Integrated Booking",
+    title: "Custom Websites with Built-in Booking — Alter Nine",
     description:
-      "Custom websites with fully integrated booking systems that keep customers on your own site."
+      "Custom-designed websites with integrated booking for salons, clinics, coaches, and studios."
   }
 };
 

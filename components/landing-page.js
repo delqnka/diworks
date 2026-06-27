@@ -130,7 +130,7 @@ export function LandingPage({ locale, content }) {
 
         <section className="visually-hidden" aria-hidden="true">
           <h2>Website with built-in booking system for service businesses</h2>
-          <p>DiWorks builds custom websites with integrated booking systems for hair salons, beauty salons, barbershops, wellness studios, clinics, coaches and consultants. No Calendly, no third-party booking pages - everything lives on your own website and brand.</p>
+          <p>Alter Nine builds custom websites with integrated booking systems for hair salons, beauty salons, barbershops, wellness studios, clinics, coaches and consultants. No Calendly, no third-party booking pages - everything lives on your own website and brand.</p>
           <ul>
             {content.industries.map((item) => (
               <li key={item}>Custom website with booking system for {item.toLowerCase()}</li>
@@ -178,7 +178,7 @@ export function LandingPage({ locale, content }) {
           <div>
             <Link className="brand footer-brand" href={locale === "bg" ? "/bg" : "/"}>
               <span className="brand-mark" aria-hidden="true"></span>
-              <Image src="/9-logo.svg" alt="DiWorks" width={100} height={28} />
+              <Image src="/9-logo.svg" alt="Alter Nine" width={100} height={28} />
             </Link>
             <p>{content.footerText}</p>
           </div>
@@ -189,7 +189,7 @@ export function LandingPage({ locale, content }) {
             <Link href="/bg" hrefLang="bg" lang="bg" aria-label="Български">
               {content.otherLocaleLabel}
             </Link>
-            <a href="mailto:hello@diworks.co">hello@diworks.co</a>
+            <a href="mailto:hello@alternine.co">hello@alternine.co</a>
           </div>
         </div>
       </footer>

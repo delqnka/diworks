@@ -4,11 +4,11 @@ const R2 =
 
 const organizationBase = {
   "@type": "Organization",
-  "@id": "https://diworks.co/#organization",
-  name: "DiWorks",
-  url: "https://diworks.co/",
-  logo: "https://diworks.co/logo-mark.svg",
-  email: "hello@diworks.co",
+  "@id": "https://alternine.co/#organization",
+  name: "Alter Nine",
+  url: "https://alternine.co/",
+  logo: "https://alternine.co/logo-mark.svg",
+  email: "hello@alternine.co",
   founder: {
     "@type": "Person",
     name: "Delyana"
@@ -20,7 +20,7 @@ export const siteContent = {
   en: {
     lang: "en",
     htmlLang: "en",
-    pageUrl: "https://diworks.co/",
+    pageUrl: "https://alternine.co/",
     switchHref: "/bg",
     switchLabel: "BG",
     navHow: "How it works",
@@ -50,7 +50,7 @@ export const siteContent = {
     compareBadFlow: ["Website", "Then", "Calendly, Fresha or another external platform", "Then", "Booking complete"],
     compareBadText:
       "When customers leave your website to make a booking, you lose control over the experience and often lose conversions.",
-    compareGoodLabel: "THE DIWORKS WAY",
+    compareGoodLabel: "THE ALTER NINE WAY",
     compareGoodFlow: ["Website", "Then", "Booking complete"],
     compareGoodText:
       "Everything happens on your website. Your customers stay on your brand, on your domain, and inside a booking experience designed specifically for your business.",
@@ -124,7 +124,7 @@ export const siteContent = {
     founderQuote:
       "A better booking experience feels small on paper, but it changes how professional your whole business feels online.",
     founderName: "Delyana",
-    founderRole: "Founder of DiWorks",
+    founderRole: "Founder of Alter Nine",
     featuresEyebrow: "MORE THAN A WEBSITE",
     featuresTitle: "A website that becomes",
     featuresAccent: "part of your business.",
@@ -160,7 +160,7 @@ export const siteContent = {
       "Waxing Studios",
       "Skin Care Clinics"
     ],
-    reasonsEyebrow: "WHY BUSINESSES CHOOSE DIWORKS",
+    reasonsEyebrow: "WHY BUSINESSES CHOOSE ALTER NINE",
     reasons: [
       "Booking happens directly on your website",
       "A smoother customer experience",
@@ -259,10 +259,10 @@ export const siteContent = {
         },
         {
           "@type": "Service",
-          "@id": "https://diworks.co/#service",
+          "@id": "https://alternine.co/#service",
           serviceType: "Custom website design and integrated booking system implementation",
           provider: {
-            "@id": "https://diworks.co/#organization"
+            "@id": "https://alternine.co/#organization"
           },
           areaServed: ["Europe", "United Kingdom", "United States"],
           audience: {
@@ -283,7 +283,7 @@ export const siteContent = {
         },
         {
           "@type": "FAQPage",
-          "@id": "https://diworks.co/#faq",
+          "@id": "https://alternine.co/#faq",
           mainEntity: [
             {
               "@type": "Question",
@@ -306,7 +306,7 @@ export const siteContent = {
               name: "Can you redesign my existing website?",
               acceptedAnswer: {
                 "@type": "Answer",
-                text: "Yes. DiWorks can improve your current website or build a completely new one."
+                text: "Yes. Alter Nine can improve your current website or build a completely new one."
               }
             },
             {
@@ -334,6 +334,39 @@ export const siteContent = {
               }
             }
           ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://alternine.co/#website",
+          url: "https://alternine.co/",
+          name: "Alter Nine",
+          description: "Custom websites with built-in booking for modern service businesses.",
+          inLanguage: ["en", "bg"],
+          publisher: { "@id": "https://alternine.co/#organization" }
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://alternine.co/#webpage",
+          url: "https://alternine.co/",
+          name: "Custom Websites with Built-in Booking — Alter Nine",
+          isPartOf: { "@id": "https://alternine.co/#website" },
+          about: { "@id": "https://alternine.co/#organization" },
+          primaryImageOfPage: "https://alternine.co/social-card.svg",
+          inLanguage: "en"
+        },
+        {
+          "@type": "Person",
+          "@id": "https://alternine.co/#delyana",
+          name: "Delyana",
+          jobTitle: "Founder & Designer",
+          worksFor: { "@id": "https://alternine.co/#organization" },
+          knowsAbout: [
+            "Web design",
+            "Custom website development",
+            "Booking system integration",
+            "Brand identity"
+          ],
+          image: "https://alternine.co/delyana-bw.webp"
         }
       ]
     }
@@ -341,7 +374,7 @@ export const siteContent = {
   bg: {
     lang: "bg",
     htmlLang: "bg",
-    pageUrl: "https://diworks.co/bg/",
+    pageUrl: "https://alternine.co/bg/",
     switchHref: "/",
     switchLabel: "EN",
     navHow: "Как работи",
@@ -371,12 +404,12 @@ export const siteContent = {
     compareBadFlow: ["Сайт", "После", "Calendly, Fresha или друга външна платформа", "После", "Записването е готово"],
     compareBadText:
       "Когато клиентът напусне сайта ви, за да си запази час, губите контрол върху изживяването и често губите и конверсии.",
-    compareGoodLabel: "НАЧИНЪТ НА DIWORKS",
+    compareGoodLabel: "НАЧИНЪТ НА ALTER NINE",
     compareGoodFlow: ["Сайт", "После", "Записването е готово"],
     compareGoodText:
       "Всичко се случва във вашия сайт. Клиентите остават във вашия бранд, на вашия домейн и в буукинг изживяване, направено специално за вашия бизнес.",
     compareGoodChips: ["Без пренасочване", "Без външни платформи", "Без излишни стъпки"],
-    storyEyebrow: "ЗАЩО СЪЩЕСТВУВА DIWORKS",
+    storyEyebrow: "ЗАЩО СЪЩЕСТВУВА ALTER NINE",
     storyTitle: "Създадено от реален бизнес проблем,",
     storyAccent: "а не от мода",
     storyParagraphs: [
@@ -384,7 +417,7 @@ export const siteContent = {
       "Но се случи.",
       "Докато управлявах салона си, започнах да се интересувам сериозно от програмиране. Това, което започна като любопитство, се превърна в безсънни нощи в правене на сайтове, експерименти с код и в крайна сметка създаване на собствен booking софтуер.",
       "Осъзнах, че бизнесите не би трябвало да избират между красив сайт и booking система, която наистина работи.",
-      "Затова създадох DiWorks."
+      "Затова създадох Alter Nine."
     ],
     founderQuote:
       "По доброто записване изглежда като малък детайл, но променя колко професионален изглежда целият ви бизнес онлайн.",
@@ -425,7 +458,7 @@ export const siteContent = {
     storyAuthor: "Деляна Николова",
     storyAuthorRole: "Основател • Дизайнер • Разработчик",
     founderName: "Деляна",
-    founderRole: "Основател на DiWorks",
+    founderRole: "Основател на Alter Nine",
     featuresEyebrow: "ПОВЕЧЕ ОТ САЙТ",
     featuresTitle: "Сайт, който става",
     featuresAccent: "част от твоя бизнес.",
@@ -460,7 +493,7 @@ export const siteContent = {
       "Студиа за кола маска",
       "Дерматолози"
     ],
-    reasonsEyebrow: "ЗАЩО БИЗНЕСИТЕ ИЗБИРАТ DIWORKS",
+    reasonsEyebrow: "ЗАЩО БИЗНЕСИТЕ ИЗБИРАТ ALTER NINE",
     reasons: [
       "Записването става директно във вашия сайт",
       "По гладко клиентско изживяване",
@@ -520,7 +553,7 @@ export const siteContent = {
     pricingEyebrow: "ЦЕНИ",
     pricingTitle: "Нека направим нещо, което подхожда на твоя бизнес.",
     pricingBody: [
-      "Всеки проект е къстъм изработен, което означава, че няма фиксиран пакет или универсална цена.",
+      "Всеки проект е изработен по поръчка, което означава, че няма фиксиран пакет или универсална цена.",
       "Започваме с разговор, дефинираме точно какво ти трябва и ще ти изпратя ясна, прозрачна оферта преди да започне каквато и да е работа."
     ],
     pricingCta: "Запази безплатно обаждане",
@@ -549,7 +582,57 @@ export const siteContent = {
         {
           ...organizationBase,
           description:
-            "Къстъм сайтове с интегрирани буукинг системи за модерни бизнеси с услуги."
+            "Сайтове по поръчка с вградена система за онлайн записване за модерни бизнеси с услуги."
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://alternine.co/#website",
+          url: "https://alternine.co/",
+          name: "Alter Nine",
+          description: "Сайтове по поръчка с вградено онлайн записване за модерни бизнеси с услуги.",
+          inLanguage: ["bg", "en"],
+          publisher: { "@id": "https://alternine.co/#organization" }
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://alternine.co/bg/#webpage",
+          url: "https://alternine.co/bg/",
+          name: "Сайтове по поръчка с онлайн записване | Alter Nine",
+          isPartOf: { "@id": "https://alternine.co/#website" },
+          about: { "@id": "https://alternine.co/#organization" },
+          primaryImageOfPage: "https://alternine.co/social-card.svg",
+          inLanguage: "bg"
+        },
+        {
+          "@type": "Person",
+          "@id": "https://alternine.co/#delyana",
+          name: "Delyana",
+          jobTitle: "Основател и дизайнер",
+          worksFor: { "@id": "https://alternine.co/#organization" },
+          knowsAbout: [
+            "Уеб дизайн",
+            "Сайтове по поръчка",
+            "Системи за онлайн записване",
+            "Брандинг"
+          ],
+          image: "https://alternine.co/delyana-bw.webp"
+        },
+        {
+          "@type": "Service",
+          "@id": "https://alternine.co/bg/#service",
+          serviceType: "Изработка на сайт по поръчка с интегрирана система за онлайн записване",
+          provider: { "@id": "https://alternine.co/#organization" },
+          areaServed: ["България", "Европа"],
+          audience: {
+            "@type": "Audience",
+            audienceType: "Бизнеси с услуги"
+          },
+          offers: {
+            "@type": "Offer",
+            priceCurrency: "EUR",
+            price: "1500",
+            description: "Сайт по поръчка с вградена система за онлайн записване от 1500 EUR."
+          }
         }
       ]
     }

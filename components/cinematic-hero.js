@@ -64,7 +64,7 @@ export function CinematicHero({ content, locale = "en" }) {
 
       <nav className={styles.nav}>
         <Link className={styles.brand} href={locale === "bg" ? "/bg" : "/"}>
-          <Image src="/9-logo.svg" alt="DiWorks" width={160} height={90} priority unoptimized />
+          <Image src="/9-logo.svg" alt="Alter Nine" width={160} height={90} priority unoptimized />
         </Link>
 
         <Link

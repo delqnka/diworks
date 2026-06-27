@@ -88,7 +88,7 @@ export function AboutSection({ content }) {
           >
             <Image
               src="/delyana-bw.webp"
-              alt={`${content.storyAuthor || "Delyana"}, founder of DiWorks`}
+              alt={`${content.storyAuthor || "Delyana"}, founder of Alter Nine`}
               width={910}
               height={1138}
               sizes="(max-width: 768px) 90vw, 455px"

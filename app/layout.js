@@ -1,5 +1,6 @@
 import "./globals.css";
 import "@clicka1/booking/styles.css";
+import { headers } from "next/headers";
 import { Geist, Inter, Kanit, Cormorant_Garamond, Instrument_Sans } from "next/font/google";
 
 const geist = Geist({
@@ -34,21 +35,21 @@ const instrumentSans = Instrument_Sans({
 });
 
 export const metadata = {
-  metadataBase: new URL("https://diworks.co"),
+  metadataBase: new URL("https://alternine.co"),
   title: {
-    default: "DiWorks",
-    template: "%s | DiWorks"
+    default: "Alter Nine",
+    template: "%s | Alter Nine"
   },
   description: "Custom websites with integrated booking systems for modern service businesses.",
-  applicationName: "DiWorks",
+  applicationName: "Alter Nine",
   authors: [{ name: "Delyana" }],
   creator: "Delyana",
-  publisher: "DiWorks",
+  publisher: "Alter Nine",
   icons: {
     icon: "/9-fav.svg"
   },
   openGraph: {
-    siteName: "DiWorks",
+    siteName: "Alter Nine",
     images: ["/social-card.svg"],
     type: "website"
   },
@@ -58,10 +59,13 @@ export const metadata = {
   }
 };
 
-export default function RootLayout({ children }) {
+export default async function RootLayout({ children }) {
+  const hdrs = await headers();
+  const pathname = hdrs.get("x-pathname") || "/";
+  const lang = pathname.startsWith("/bg") ? "bg" : "en";
   return (
     <html
-      lang="en"
+      lang={lang}
       className={`${geist.variable} ${inter.variable} ${kanit.variable} ${cormorant.variable} ${instrumentSans.variable}`}
     >
       <head>

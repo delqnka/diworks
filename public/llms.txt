@@ -1,10 +1,10 @@
-# DiWorks
+# Alter Nine
 
 > Custom websites with built-in booking systems for service businesses. Accept bookings, deposits and manage appointments from a single site — no third-party booking pages, no platforms.
 
 Founder: Delyana. Based in Bulgaria, working with service businesses across Europe, the UK and the US (English and Bulgarian).
 
-## What DiWorks does
+## What Alter Nine does
 
 - Custom-built websites tailored to each service business
 - Integrated booking system (powered by Clicka) embedded directly in the site
@@ -13,9 +13,9 @@ Founder: Delyana. Based in Bulgaria, working with service businesses across Euro
 
 ## Pages
 
-- [Home (English)](https://diworks.co/): Hero, portfolio, process, about, contact
-- [Home (Bulgarian)](https://diworks.co/bg): Bulgarian version of the landing page
-- [Booking demo](https://diworks.co/booking): Live demo of the integrated booking flow
+- [Home (English)](https://alternine.co/): Hero, portfolio, process, about, contact
+- [Home (Bulgarian)](https://alternine.co/bg): Bulgarian version of the landing page
+- [Booking demo](https://alternine.co/booking): Live demo of the integrated booking flow
 
 ## Selected work
 
@@ -25,4 +25,4 @@ Founder: Delyana. Based in Bulgaria, working with service businesses across Euro
 
 ## Contact
 
-- Email: hello@diworks.co
+- Email: hello@alternine.co
