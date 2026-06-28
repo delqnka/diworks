@@ -11,6 +11,7 @@ export function AppShell({ children, locale }) {
     <BookingProvider
       salonSlug={process.env.NEXT_PUBLIC_SALON_SLUG}
       engineUrl={process.env.NEXT_PUBLIC_ENGINE_URL}
+      apiKey={process.env.NEXT_PUBLIC_BOOKING_API_KEY}
       locale={locale}
       successUrl={siteUrl ? `${siteUrl}${successPath}` : undefined}
       cancelUrl={siteUrl ? `${siteUrl}${cancelPath}` : undefined}
