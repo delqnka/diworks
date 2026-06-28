@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion, useInView } from "framer-motion";
@@ -57,10 +57,18 @@ function StaggeredFade({ text, className }) {
 
 export function CinematicHero({ content, locale = "en" }) {
   const reduceMotion = useShouldReduceMotion();
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.playbackRate = 2;
+    }
+  }, []);
 
   return (
     <section className={styles.section}>
       <video
+        ref={videoRef}
         className={styles.video}
         autoPlay
         muted
