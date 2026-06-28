@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowUpRight, Play } from "lucide-react";
 import { BookingCta } from "@/components/booking-cta";
