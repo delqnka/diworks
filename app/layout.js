@@ -1,7 +1,10 @@
 import "./globals.css";
 import "@clicka1/booking/styles.css";
 import { headers } from "next/headers";
+import Script from "next/script";
 import { Geist, Inter, Kanit, Cormorant_Garamond, Instrument_Sans } from "next/font/google";
+
+const GA_ID = "G-6D4DSTYWH7";
 
 const geist = Geist({
   subsets: ["latin"],
@@ -95,7 +98,19 @@ export default async function RootLayout({ children }) {
           }}
         />
       </head>
-      <body>{children}</body>
+      <body>
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="ga-init" strategy="afterInteractive">
+          {`window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', '${GA_ID}');`}
+        </Script>
+        {children}
+      </body>
     </html>
   );
 }
