@@ -8,7 +8,7 @@ const organizationBase = {
   name: "Alter Nine",
   url: "https://alternine.co/",
   logo: "https://alternine.co/logo-mark.svg",
-  email: "hello@alternine.co",
+  email: "hello@mail.alternine.co",
   founder: {
     "@type": "Person",
     name: "Delyana"

@@ -3,7 +3,7 @@
 import { useEffect } from "react";
 import { useBooking } from "@clicka1/booking";
 
-export function BookingCta({ children, className, service, fallbackHref = "mailto:hello@alternine.co" }) {
+export function BookingCta({ children, className, service, fallbackHref = "mailto:hello@mail.alternine.co" }) {
   const consultationService = process.env.NEXT_PUBLIC_BOOKING_SERVICE_ID;
   const salonSlug = process.env.NEXT_PUBLIC_SALON_SLUG;
   const { open, error } = useBooking();

@@ -29,7 +29,7 @@ export function BookingStatusPage({ locale, variant }) {
       ? "Back to the site"
       : "Try again";
 
-  const secondaryLabel = isBg ? "Пиши ни на hello@alternine.co" : "Email hello@alternine.co";
+  const secondaryLabel = isBg ? "Пиши ни на hello@mail.alternine.co" : "Email hello@mail.alternine.co";
 
   return (
     <main className="booking-status-page">
@@ -43,7 +43,7 @@ export function BookingStatusPage({ locale, variant }) {
               <Link className="button button-primary" href={homeHref}>
                 {primaryLabel}
               </Link>
-              <a className="button button-ghost" href="mailto:hello@alternine.co">
+              <a className="button button-ghost" href="mailto:hello@mail.alternine.co">
                 {secondaryLabel}
               </a>
             </div>

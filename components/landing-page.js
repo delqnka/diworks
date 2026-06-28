@@ -210,7 +210,7 @@ export function LandingPage({ locale, content }) {
             <Link href="/bg" hrefLang="bg" lang="bg" aria-label="Български">
               {content.otherLocaleLabel}
             </Link>
-            <a href="mailto:hello@alternine.co">hello@alternine.co</a>
+            <a href="mailto:hello@mail.alternine.co">hello@mail.alternine.co</a>
           </div>
           <div className="footer-bottom">
             {content.footerLegal?.length ? (
