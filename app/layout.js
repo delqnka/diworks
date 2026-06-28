@@ -71,7 +71,7 @@ export default async function RootLayout({ children }) {
       <head>
         <link rel="preconnect" href="https://db.onlinewebfonts.com" />
         <link rel="preconnect" href="https://pub-a282b633397549478fc7e2204fa66fc2.r2.dev" />
-        <link rel="preconnect" href="https://www.clicka.bg" />
+        <link rel="preconnect" href="https://app.alternine.co" />
         <link
           rel="preload"
           as="style"

@@ -7,7 +7,7 @@ export const config = {
 const ENGINE_ORIGIN =
   process.env.CLICKA_ENGINE_URL ||
   process.env.NEXT_PUBLIC_ENGINE_URL ||
-  "https://www.clicka.bg";
+  "https://app.alternine.co";
 
 const SCANNER_PATTERNS = [
   /^\/wp-/i,

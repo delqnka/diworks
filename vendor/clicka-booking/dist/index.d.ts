@@ -33,7 +33,7 @@ type BookingProviderProps = {
      * 2. `<meta name="clicka:engine" content="...">`
      * 3. `process.env.NEXT_PUBLIC_CLICKA_ENGINE`
      * 4. `process.env.NEXT_PUBLIC_CLICKA_API_URL`
-     * 5. Default: `https://clicka.bg`
+     * 5. Default: `https://app.alternine.co`
      */
     engineUrl?: string;
     /**
