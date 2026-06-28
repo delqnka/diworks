@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowUpRight, Play } from "lucide-react";
 import { BookingCta } from "@/components/booking-cta";
@@ -152,76 +152,17 @@ function ProjectRow({ project, readMoreLabel, readLessLabel }) {
 }
 
 function PortfolioList({ projects, readMoreLabel, readLessLabel }) {
-  const scrollerRef = useRef(null);
-  const [active, setActive] = useState(0);
-
-  useEffect(() => {
-    const el = scrollerRef.current;
-    if (!el) return;
-    let raf = 0;
-    const onScroll = () => {
-      if (raf) return;
-      raf = requestAnimationFrame(() => {
-        raf = 0;
-        const center = el.scrollLeft + el.clientWidth / 2;
-        const cards = el.querySelectorAll(`.${styles.row}`);
-        let best = 0;
-        let bestDist = Infinity;
-        cards.forEach((c, i) => {
-          const cx = c.offsetLeft + c.offsetWidth / 2;
-          const d = Math.abs(cx - center);
-          if (d < bestDist) {
-            bestDist = d;
-            best = i;
-          }
-        });
-        setActive(best);
-      });
-    };
-    el.addEventListener("scroll", onScroll, { passive: true });
-    return () => {
-      el.removeEventListener("scroll", onScroll);
-      if (raf) cancelAnimationFrame(raf);
-    };
-  }, []);
-
-  const goTo = (i) => {
-    const el = scrollerRef.current;
-    if (!el) return;
-    const card = el.querySelectorAll(`.${styles.row}`)[i];
-    if (card) {
-      el.scrollTo({ left: card.offsetLeft - (el.clientWidth - card.offsetWidth) / 2, behavior: "smooth" });
-    }
-  };
-
   return (
-    <>
-      <div className={styles.list} ref={scrollerRef}>
-        {projects.map((project, i) => (
-          <ProjectRow
-            key={i}
-            project={project}
-            readMoreLabel={readMoreLabel}
-            readLessLabel={readLessLabel}
-          />
-        ))}
-      </div>
-      {projects.length > 1 && (
-        <div className={styles.dots} role="tablist" aria-label="Projects">
-          {projects.map((_, i) => (
-            <button
-              key={i}
-              type="button"
-              role="tab"
-              aria-selected={i === active}
-              aria-label={`Go to project ${i + 1}`}
-              className={`${styles.dot} ${i === active ? styles.dotActive : ""}`}
-              onClick={() => goTo(i)}
-            />
-          ))}
-        </div>
-      )}
-    </>
+    <div className={styles.list}>
+      {projects.map((project, i) => (
+        <ProjectRow
+          key={i}
+          project={project}
+          readMoreLabel={readMoreLabel}
+          readLessLabel={readLessLabel}
+        />
+      ))}
+    </div>
   );
 }
 

@@ -8,6 +8,7 @@
   color: #fff;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  touch-action: pan-y;
 }
 @supports not (min-height: 100dvh) {
   .section { min-height: 100vh; }
@@ -206,6 +207,7 @@
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
   will-change: transform;
+  pointer-events: none;
 }
 
 .scrim {
@@ -214,6 +216,7 @@
   background:
     linear-gradient(180deg, rgba(1,1,1,0.35) 0%, rgba(1,1,1,0.1) 20%, rgba(1,1,1,0) 38%, rgba(1,1,1,0) 60%, rgba(1,1,1,0.4) 78%, rgba(1,1,1,0.85) 92%, rgba(1,1,1,0.95) 100%);
   z-index: 1;
+  pointer-events: none;
 }
 
 .inner {

@@ -2,8 +2,9 @@
 
 import { useRef } from "react";
 import Image from "next/image";
-import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { BookingCta } from "@/components/booking-cta";
+import { useShouldReduceMotion } from "@/components/motion-helpers";
 import styles from "./about-section.module.css";
 
 const EASE = [0.25, 0.1, 0.25, 1];
@@ -24,7 +25,7 @@ function AnimatedChar({ progress, range, children }) {
 
 function AnimatedParagraph({ text, className }) {
   const ref = useRef(null);
-  const reduce = useReducedMotion();
+  const reduce = useShouldReduceMotion();
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start 0.85", "end 0.4"],
@@ -57,6 +58,7 @@ function AnimatedParagraph({ text, className }) {
 }
 
 export function AboutSection({ content }) {
+  const reduceMotion = useShouldReduceMotion();
   const paragraphs = content.storyParagraphs || [];
   const lastIndex = paragraphs.length - 1;
   const hasByline = content.storyAuthor || content.storyAuthorRole;
@@ -66,9 +68,9 @@ export function AboutSection({ content }) {
       <div className={styles.inner}>
         <motion.figure
           className={styles.portrait}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "100px" }}
+          initial={reduceMotion ? false : "hidden"}
+          whileInView={reduceMotion ? undefined : "visible"}
+          viewport={reduceMotion ? undefined : { once: true, margin: "100px" }}
           variants={{
             hidden: { opacity: 0, y: 24, clipPath: "inset(0 0 100% 0)" },
             visible: {
@@ -81,10 +83,14 @@ export function AboutSection({ content }) {
         >
           <motion.div
             className={styles.portraitInner}
-            variants={{
-              hidden: { scale: 1.18 },
-              visible: { scale: 1, transition: { duration: 1.4, ease: EASE } },
-            }}
+            variants={
+              reduceMotion
+                ? undefined
+                : {
+                    hidden: { scale: 1.18 },
+                    visible: { scale: 1, transition: { duration: 1.4, ease: EASE } },
+                  }
+            }
           >
             <Image
               src="/delyana-bw.webp"
@@ -101,10 +107,10 @@ export function AboutSection({ content }) {
           {hasByline && (
             <motion.div
               className={styles.byline}
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "100px" }}
-              transition={{ duration: 0.7, ease: EASE }}
+              initial={reduceMotion ? false : { opacity: 0, y: 16 }}
+              whileInView={reduceMotion ? undefined : { opacity: 1, y: 0 }}
+              viewport={reduceMotion ? undefined : { once: true, margin: "100px" }}
+              transition={reduceMotion ? undefined : { duration: 0.7, ease: EASE }}
             >
               {content.storyAuthor && (
                 <span className={styles.bylineName}>{content.storyAuthor}</span>
@@ -116,37 +122,37 @@ export function AboutSection({ content }) {
           )}
 
           <motion.h2
-          className={styles.heading}
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "100px" }}
-          transition={{ duration: 0.8, ease: EASE }}
-        >
-          {content.storyTitle}{" "}
-          <span className={styles.headingAccent}>{content.storyAccent}</span>
-        </motion.h2>
+            className={styles.heading}
+            initial={reduceMotion ? false : { opacity: 0, y: 30 }}
+            whileInView={reduceMotion ? undefined : { opacity: 1, y: 0 }}
+            viewport={reduceMotion ? undefined : { once: true, margin: "100px" }}
+            transition={reduceMotion ? undefined : { duration: 0.8, ease: EASE }}
+          >
+            {content.storyTitle}{" "}
+            <span className={styles.headingAccent}>{content.storyAccent}</span>
+          </motion.h2>
 
-        <div className={styles.paragraphs}>
-          {paragraphs.map((p, i) => (
-            <AnimatedParagraph
-              key={i}
-              text={p}
-              className={`${styles.paragraph} ${
-                i === lastIndex ? styles.paragraphSmall : ""
-              }`}
-            />
-          ))}
-        </div>
+          <div className={styles.paragraphs}>
+            {paragraphs.map((p, i) => (
+              <AnimatedParagraph
+                key={i}
+                text={p}
+                className={`${styles.paragraph} ${
+                  i === lastIndex ? styles.paragraphSmall : ""
+                }`}
+              />
+            ))}
+          </div>
 
-        <motion.div
-          className={styles.ctaWrap}
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "80px" }}
-          transition={{ duration: 0.7, delay: 0.15, ease: EASE }}
-        >
-          <BookingCta className={styles.cta}>{content.storyCta}</BookingCta>
-        </motion.div>
+          <motion.div
+            className={styles.ctaWrap}
+            initial={reduceMotion ? false : { opacity: 0, y: 16 }}
+            whileInView={reduceMotion ? undefined : { opacity: 1, y: 0 }}
+            viewport={reduceMotion ? undefined : { once: true, margin: "80px" }}
+            transition={reduceMotion ? undefined : { duration: 0.7, delay: 0.15, ease: EASE }}
+          >
+            <BookingCta className={styles.cta}>{content.storyCta}</BookingCta>
+          </motion.div>
         </div>
       </div>
     </section>
