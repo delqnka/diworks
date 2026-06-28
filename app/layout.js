@@ -2,6 +2,7 @@ import "./globals.css";
 import "@clicka1/booking/styles.css";
 import { headers } from "next/headers";
 import Script from "next/script";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Geist, Inter, Kanit, Cormorant_Garamond, Instrument_Sans } from "next/font/google";
 
 const GA_ID = "G-6D4DSTYWH7";
@@ -113,6 +114,7 @@ gtag('js', new Date());
 gtag('config', '${GA_ID}');`}
         </Script>
         {children}
+        <SpeedInsights />
       </body>
     </html>
   );
