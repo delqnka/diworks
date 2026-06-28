@@ -88,14 +88,6 @@ export function CinematicHero({ content, locale = "en" }) {
           <Image src="/9-logo.svg" alt="Alter Nine" width={160} height={90} priority unoptimized />
         </Link>
 
-        <Link
-          className={styles.langSwitch}
-          href={content.switchHref}
-          lang={locale === "bg" ? "en" : "bg"}
-        >
-          {content.switchLabel}
-        </Link>
-
         <div className={styles.navLinks}>
           <Link
             className={styles.navLink}

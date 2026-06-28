@@ -1,6 +1,5 @@
 import "./globals.css";
 import "@clicka1/booking/styles.css";
-import { headers } from "next/headers";
 import Script from "next/script";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Geist, Inter, Kanit, Cormorant_Garamond, Instrument_Sans } from "next/font/google";
@@ -49,11 +48,17 @@ export const metadata = {
   authors: [{ name: "Delyana" }],
   creator: "Delyana",
   publisher: "Alter Nine",
+  verification: {
+    other: {
+      "msvalidate.01": "E6DAE1F5785F865D04F7A7365F99EA5B"
+    }
+  },
   icons: {
     icon: [
       { url: "/9-fav.svg", type: "image/svg+xml" },
       { url: "/favicon.png", sizes: "96x96", type: "image/png" }
-    ]
+    ],
+    apple: [{ url: "/favicon.png", sizes: "180x180", type: "image/png" }]
   },
   openGraph: {
     siteName: "Alter Nine",
@@ -66,13 +71,11 @@ export const metadata = {
   }
 };
 
-export default async function RootLayout({ children }) {
-  const hdrs = await headers();
-  const pathname = hdrs.get("x-pathname") || "/";
-  const lang = pathname.startsWith("/bg") ? "bg" : "en";
+export default function RootLayout({ children }) {
   return (
     <html
-      lang={lang}
+      lang="en"
+      suppressHydrationWarning
       className={`${geist.variable} ${inter.variable} ${kanit.variable} ${cormorant.variable} ${instrumentSans.variable}`}
     >
       <head>

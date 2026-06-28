@@ -4,7 +4,7 @@ import { Fragment, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { useShouldReduceMotion } from "@/components/motion-helpers";
 
-function StaggeredFade({ text, className, startIndex = 0, italic = false }) {
+function StaggeredFade({ text, className, startIndex = 0, italic = false, animate = true }) {
   const words = text.split(" ");
   let charIndex = startIndex;
   return (
@@ -19,7 +19,7 @@ function StaggeredFade({ text, className, startIndex = 0, italic = false }) {
                   key={`c-${i}`}
                   style={{ display: "inline-block" }}
                   initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
+                  animate={animate ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
                   transition={{ duration: 0.5, delay: i * 0.04, ease: "easeOut" }}
                 >
                   {ch}
@@ -41,18 +41,14 @@ export function FeaturesHeading({ title, accent }) {
 
   return (
     <h2 ref={ref} className="features-heading">
-      {(inView || reduceMotion) && (
+      {reduceMotion ? title : <StaggeredFade text={title} animate={inView} />}
+      {accent && (
         <>
-          {reduceMotion ? title : <StaggeredFade text={title} />}
-          {accent && (
-            <>
-              {" "}
-              {reduceMotion ? (
-                <span className="features-heading-accent">{accent}</span>
-              ) : (
-                <StaggeredFade text={accent} startIndex={title.length} italic />
-              )}
-            </>
+          {" "}
+          {reduceMotion ? (
+            <span className="features-heading-accent">{accent}</span>
+          ) : (
+            <StaggeredFade text={accent} startIndex={title.length} italic animate={inView} />
           )}
         </>
       )}

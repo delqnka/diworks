@@ -85,14 +85,20 @@
 }
 
 .navLinks {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-left: auto;
+}
+.navLinks .navCtaBtn {
   display: none;
 }
 @media (min-width: 768px) {
   .navLinks {
-    display: flex;
-    align-items: center;
     gap: 2.25rem;
-    margin-left: auto;
+  }
+  .navLinks .navCtaBtn {
+    display: inline-flex;
   }
 }
 

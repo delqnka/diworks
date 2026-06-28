@@ -74,7 +74,7 @@ export const siteContent = {
     missionTitleEnd: "",
     missionSubtitle: "Neither should your reviews.",
     missionText:
-      "I know because I ran a salon myself. Most service businesses rely on platforms like Fresha or Treatwell. They send customers to a marketplace where they're surrounded by competitors and your business becomes just another listing.\n\nThe booking happens. Your brand doesn't.\n\nI created my service to change that. **Every website I build includes a fully integrated booking experience that lives on your own domain, under your own brand.**",
+      "I know because I ran a salon myself. Most service businesses rely on platforms like Fresha or Treatwell. They send customers to a marketplace where they're surrounded by competitors and your business becomes just another listing.\n\nThe booking happens. Your brand doesn't.\n\nI created my service to change that. Every website I build includes a fully integrated booking experience that lives **on your own domain, under your own brand**.",
     portfolioEyebrow: "...AND MORE LIVE WORK",
     portfolioReadMore: "Read more",
     portfolioReadLess: "Show less",
@@ -492,7 +492,7 @@ export const siteContent = {
     missionTitleEnd: "",
     missionSubtitle: "Нито отзивите ти.",
     missionText:
-      "Знам, защото самата аз управлявах салон. Повечето service бизнеси разчитат на платформи като Fresha или Treatwell. Те изпращат клиентите им в маркетплейс, където са заобиколени от конкуренти, а бизнесът им се превръща в поредното листване.\n\nРезервацията се случва. Брандът ти, не.\n\nСъздадох услугата си, за да променя това. **Всеки сайт, който правя, включва изцяло интегриран booking опит, който живее на твоя домейн, под твоя бранд.**",
+      "Знам, защото самата аз управлявах салон. Повечето service бизнеси разчитат на платформи като Fresha или Treatwell. Те изпращат клиентите им в маркетплейс, където са заобиколени от конкуренти, а бизнесът им се превръща в поредното листване.\n\nРезервацията се случва. Брандът ти, не.\n\nСъздадох услугата си, за да променя това. Всеки сайт, който правя, включва изцяло интегриран booking опит, който живее **на твоя домейн, под твоя бранд**.",
     portfolioEyebrow: "...И ОЩЕ АКТИВНИ САЙТОВЕ",
     portfolioReadMore: "Прочети повече",
     portfolioReadLess: "Свий",
