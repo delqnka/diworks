@@ -49,7 +49,10 @@ export const metadata = {
   creator: "Delyana",
   publisher: "Alter Nine",
   icons: {
-    icon: "/9-fav.svg"
+    icon: [
+      { url: "/9-fav.svg", type: "image/svg+xml" },
+      { url: "/favicon.png", sizes: "96x96", type: "image/png" }
+    ]
   },
   openGraph: {
     siteName: "Alter Nine",
