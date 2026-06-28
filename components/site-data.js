@@ -435,7 +435,7 @@ export const siteContent = {
   bg: {
     lang: "bg",
     htmlLang: "bg",
-    pageUrl: "https://alternine.co/bg/",
+    pageUrl: "https://alternine.co/bg",
     switchHref: "/",
     switchLabel: "EN",
     navHow: "Как работи",
@@ -688,8 +688,8 @@ export const siteContent = {
         },
         {
           "@type": "WebPage",
-          "@id": "https://alternine.co/bg/#webpage",
-          url: "https://alternine.co/bg/",
+          "@id": "https://alternine.co/bg#webpage",
+          url: "https://alternine.co/bg",
           name: "Сайтове по поръчка с онлайн записване | Alter Nine",
           isPartOf: { "@id": "https://alternine.co/#website" },
           about: { "@id": "https://alternine.co/#organization" },
@@ -712,7 +712,7 @@ export const siteContent = {
         },
         {
           "@type": "Service",
-          "@id": "https://alternine.co/bg/#service",
+          "@id": "https://alternine.co/bg#service",
           serviceType: "Изработка на сайт по поръчка с интегрирана система за онлайн записване",
           provider: { "@id": "https://alternine.co/#organization" },
           areaServed: ["България", "Европа"],

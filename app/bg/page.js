@@ -9,10 +9,10 @@ export const metadata = {
   description:
     "Alter Nine създава сайтове по поръчка с вградена система за онлайн записване — за салони, клиники, студия и консултанти. Без платформи, без комисионни, без външни страници.",
   alternates: {
-    canonical: "https://alternine.co/bg/",
+    canonical: "https://alternine.co/bg",
     languages: {
       en: "https://alternine.co/",
-      bg: "https://alternine.co/bg/"
+      bg: "https://alternine.co/bg"
     }
   },
   keywords: [
@@ -29,7 +29,7 @@ export const metadata = {
     title: "Сайтове по поръчка с онлайн записване | Alter Nine",
     description:
       "Сайтове по поръчка с вградена система за онлайн записване — за салони, клиники, студия и консултанти. Без платформи, без комисионни.",
-    url: "https://alternine.co/bg/",
+    url: "https://alternine.co/bg",
     locale: "bg_BG"
   },
   twitter: {

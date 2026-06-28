@@ -10,19 +10,19 @@ export default function sitemap() {
       alternates: {
         languages: {
           en: "https://alternine.co/",
-          bg: "https://alternine.co/bg/"
+          bg: "https://alternine.co/bg"
         }
       }
     },
     {
-      url: "https://alternine.co/bg/",
+      url: "https://alternine.co/bg",
       lastModified: LAST_MODIFIED,
       changeFrequency: "monthly",
       priority: 1.0,
       alternates: {
         languages: {
           en: "https://alternine.co/",
-          bg: "https://alternine.co/bg/"
+          bg: "https://alternine.co/bg"
         }
       }
     }

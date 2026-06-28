@@ -12,7 +12,7 @@ export const metadata = {
     canonical: "https://alternine.co/",
     languages: {
       en: "https://alternine.co/",
-      bg: "https://alternine.co/bg/"
+      bg: "https://alternine.co/bg"
     }
   },
   keywords: [
