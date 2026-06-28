@@ -31,8 +31,9 @@ export const siteContent = {
     heroTitleEnd: "system",
     heroLead:
       "Perfect for service businesses that want to accept bookings, deposits and manage appointments from one place.",
-    heroSecondary: "Try the bookings",
-    heroTrust: "No third-party booking pages. No booking platforms. Everything happens on your website.",
+    heroSecondary: "Try it on a real site",
+    heroTrust: "No third-party booking pages. 100% mobile first. Hand-crafted, not templated.",
+    heroDemoHint: "Click any \"Let's talk\" - that's how your customers will book you.",
     miniSite: "Your website",
     bookingBadge: "Integrated booking",
     bookingStatus: "Live",
@@ -74,49 +75,41 @@ export const siteContent = {
     missionSubtitle: "Neither should your reviews.",
     missionText:
       "I know because I ran a salon myself. Most service businesses rely on platforms like Fresha or Treatwell. They send customers to a marketplace where they're surrounded by competitors and your business becomes just another listing.\n\nThe booking happens. Your brand doesn't.\n\nI created my service to change that. **Every website I build includes a fully integrated booking experience that lives on your own domain, under your own brand.**",
-    portfolioEyebrow: "SELECTED WORK",
-    portfolioTitle: "Recent",
-    portfolioTitleAccent: "projects",
+    portfolioEyebrow: "...AND MORE LIVE WORK",
+    portfolioReadMore: "Read more",
+    portfolioReadLess: "Show less",
+    portfolioTitle: "",
+    portfolioTitleAccent: "",
+    portfolioOutro: "Yours is next?",
+    portfolioOutroCta: "Let's talk",
     portfolioProjects: [
       {
         name: "Urban by Delyana",
-        category: "Client",
-        description:
-          "Hair coloring salon in Varna. A bilingual website (Bulgarian and English) with an integrated booking experience built around their services and pricing.",
-        ctaLabel: "Live Project",
+        category: "Hair coloring",
+        location: "Varna",
+        languages: "BG / EN",
+        description: {
+          lead: "A bilingual website with an integrated booking experience built around their services and pricing.",
+        },
+        ctaLabel: "View live",
         href: "https://salonurban.online",
-        images: [
-          `${R2}/IMG_2137.jpg`,
-          `${R2}/IMG_2138.jpg`,
-          `${R2}/IMG_2139.jpg`,
-        ],
+        video: `${R2}/urban-preview.mp4`,
       },
       {
         name: "Kozrlab",
-        category: "Client",
-        description:
-          "Car detailing studio in Varna. A custom site paired with a Telegram bot that gives the owner full control: they update services, prices, photos and videos directly from the bot, and every new booking from the form lands as a Telegram message they can manage on the go.",
-        ctaLabel: "Live Project",
+        category: "Car detailing",
+        location: "Varna",
+        description: {
+          lead: "Car detailing is a side hustle for this client and the booking calendar didn't fit her life.",
+          body: [
+            "So I built her a private Telegram bot. Services, prices, photos, even the copy on the site — all managed from chat.",
+            "She updates the site between day-job shifts, straight from her phone. Every booking request lands as a Telegram message she can answer in seconds.",
+          ],
+          kicker: "No dashboard. No logins. No app to learn. Just chat.",
+        },
+        ctaLabel: "View live",
         href: "https://kozrlab.com",
-        images: [
-          `${R2}/IMG_2141.jpg`,
-          `${R2}/IMG_2143.jpg`,
-          `${R2}/IMG_2144.jpg`,
-        ],
-      },
-      {
-        name: "Salon Paradise",
-        category: "Concept",
-        description:
-          "A concept site for a face treatment salon with the full booking system integrated and ready to go live. The service visuals are placeholder mockups. The real focus is on the booking flow and overall experience.",
-        href: "https://salon-paradise.vercel.app",
-        isDemo: true,
-        ctaLabel: "View Demo",
-        images: [
-          `${R2}/IMG_2145.jpg`,
-          `${R2}/IMG_2146.jpg`,
-          `${R2}/IMG_2147.jpg`,
-        ],
+        video: `${R2}/kozrlab-preview.mp4`,
       },
     ],
     storyAuthor: "Delyana Nikolova",
@@ -170,22 +163,24 @@ export const siteContent = {
       "Fast turnaround and clear communication",
       "Designed for long term growth"
     ],
-    pillarsEyebrow: "MY FOUR PILLARS",
-    pillarsTitle: "My four pillars",
+    pillarsEyebrow: "",
+    pillarsTitle: "Actually... you're scrolling the portfolio.",
+    pillarsSubtitle: "If it already feels different from a 2015 WordPress build, good. That's exactly how yours will feel, built around your brand.",
+    pillarsCta: "Let's talk",
     pillarsItems: [
-      ["1×", "Custom & hand-crafted", "Every website is built from scratch around your brand. No recycled templates, no copy-paste themes."],
-      ["2×", "Modern, Fast and premium", "Clean, timeless design that's built to convert - not to follow trends that age in a year."],
-      ["3×", "Built to grow your business", "Designed for real business outcomes - bookings, retention, repeat customers - not just aesthetics."],
-      ["4×", "Direct communication", "You talk to the person actually building it. No account managers, no hand-offs, no telephone game."]
+      ["01", "Hand-crafted, never templated"],
+      ["02", "Premium feel, instant load"],
+      ["03", "Built to book, not to decorate"],
+      ["04", "You talk to the maker, directly"]
     ],
     speedEyebrow: "BUILT FOR 2026",
     speedTitle: "No WordPress. Just speed.",
     speedChecks: [
-      "Sub-second page loads",
-      "95+ Lighthouse performance scores",
-      "WCAG-ready accessibility",
-      "SEO-optimized out of the box",
-      "Zero plugin bloat, zero security holes"
+      "Built on modern stack",
+      "Optimized for Google",
+      "Mobile-first",
+      "Accessible",
+      "Nothing to maintain"
     ],
     speedBody: [
       "It's 2026 - there's no reason your website should still run on a 20-year-old PHP CMS with 30 plugins fighting each other.",
@@ -201,7 +196,7 @@ export const siteContent = {
       ["04", "Website redesigns", "Refresh an outdated site with a faster, cleaner, conversion-focused rebuild - on a modern stack."],
       ["05", "Membership portals", "Members-only areas for class packs, subscriptions, gated content and recurring customers."],
       ["06", "AI integrations", "Smart booking assistants, AI chat, automated reminders and pricelist scanners that save you hours every week."],
-      ["07", "Telegram bots", "Custom Telegram bots that let you manage your site from your phone - update prices, edit content, check bookings and get instant alerts, all from a chat window."]
+      ["07", "Telegram bots", "For owners who want to run their business site the easiest way ever made. Update services, prices and copy by sending a message, upload photos to galleries, manage availability. And any other workflow we can build into your bot."]
     ],
     stepsEyebrow: "THE PROCESS",
     stepsTitle: "From first conversation to live website.",
@@ -223,14 +218,22 @@ export const siteContent = {
       "Every project is custom-built, which means there's no fixed package or one-size-fits-all pricing.",
       "We'll start with a conversation, define exactly what you need and I'll send you a clear, transparent quote before any work begins."
     ],
-    pricingCta: "Book a free call",
+    pricingCta: "Let's talk",
     faqEyebrow: "FREQUENTLY ASKED QUESTIONS",
     faqTitle: "Everything clients usually ask before getting started",
+    faqShowMore: "Show more questions",
+    faqShowLess: "Show less",
     faqs: [
       ["How long does the project take?", "Most projects are completed within 1 to 2 weeks depending on complexity and content requirements."],
-      ["Do I need Calendly or another booking platform?", "No. The booking experience is integrated directly into your website."],
-      ["Can you redesign my existing website?", "Yes. We can improve your current website or build a completely new one."],
+      ["Who owns the website after launch?", "Your domain, your content and the website itself stay yours - always. The only exception is the integrated booking system: it runs on my infrastructure, so if we ever part ways, the booking layer stops working. For landing pages or regular sites without booking, everything is fully yours, no strings attached."],
+      ["Can I update text and photos myself?", "Absolutely - you're not dependent on me. Every site comes with a custom admin panel built for your phone. Change a price, swap a photo, edit a service description - the site updates in seconds, no developer needed."],
+      ["Do I need to pay for hosting or worry about traffic limits?", "No. Hosting is included and runs on modern edge infrastructure that scales automatically. Whether your site gets 100 visits a month or 100,000, you pay the same - no surprise bills, no slowdowns at peak times."],
       ["Can customers pay online?", "Yes. Stripe is fully integrated, so customers can pay deposits or the full amount directly when they book. Refunds and receipts go through Stripe too."],
+      ["Do I need Calendly or another booking platform?", "No. The booking experience is integrated directly into your website."],
+      ["What about the domain? Do I need to own one?", "If you already own a domain, I'll connect it to your new site at no extra cost. If you don't, I'll register one in your name and set it up - you stay the legal owner from day one."],
+      ["Will the site work on phones and tablets?", "Absolutely. Every site is designed mobile-first and tested on phones, tablets and desktops before launch. It will look and feel right whether your customer is on a small Android, an iPhone or an iPad."],
+      ["What if my business grows - can I add more services or locations?", "Yes. Services are easy to manage yourself - just snap a photo and AI fills in the details. For bigger changes like extra locations, more languages, staff calendars or entire new sections, I can add them whenever you need. You won't outgrow the site and won't need to rebuild from scratch."],
+      ["Can you redesign my existing website?", "Yes. We can improve your current website or build a completely new one."],
       ["Who builds the website?", "Every project is designed and built directly by the founder for a consistent and personal experience."],
       ["What happens after launch?", "After launch, I'm here to make sure everything runs smoothly. Whether you need updates, improvements or new features as your business grows, we can discuss it."]
     ],
@@ -239,6 +242,16 @@ export const siteContent = {
     ctaAccent: "to confirmed appointment",
     ctaText: "Book a free consultation and let’s discuss your project.",
     footerText: "Custom websites with built-in booking",
+    footerLegal: [
+      ["Privacy", "/privacy"],
+      ["Terms", "/terms"],
+      ["Refunds", "/refunds"],
+    ],
+    footerSocials: [
+      ["instagram", "https://instagram.com/", "Instagram"],
+      ["linkedin", "https://linkedin.com/", "LinkedIn"],
+    ],
+    footerRights: "© 2026 Alter Nine. All rights reserved.",
     localeLabel: "en",
     otherLocaleLabel: "bg",
     emailSubject: "Book a Free Call",
@@ -299,6 +312,54 @@ export const siteContent = {
               acceptedAnswer: {
                 "@type": "Answer",
                 text: "No. The booking experience is integrated directly into your website."
+              }
+            },
+            {
+              "@type": "Question",
+              name: "What about the domain? Do I need to own one?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "If you already own a domain, I'll connect it to your new site at no extra cost. If you don't, I'll register one in your name and set it up - you stay the legal owner from day one."
+              }
+            },
+            {
+              "@type": "Question",
+              name: "Who owns the website after launch?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "Your domain, your content and the website itself stay yours - always. The only exception is the integrated booking system: it runs on my infrastructure, so if we ever part ways, the booking layer stops working. For landing pages or regular sites without booking, everything is fully yours, no strings attached."
+              }
+            },
+            {
+              "@type": "Question",
+              name: "Do I need to pay for hosting or worry about traffic limits?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "No. Hosting is included and runs on modern edge infrastructure that scales automatically. Whether your site gets 100 visits a month or 100,000, you pay the same - no surprise bills, no slowdowns at peak times."
+              }
+            },
+            {
+              "@type": "Question",
+              name: "Can I update text and photos myself?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "Absolutely - you're not dependent on me. Every site comes with a custom admin panel built for your phone. Change a price, swap a photo, edit a service description - the site updates in seconds, no developer needed."
+              }
+            },
+            {
+              "@type": "Question",
+              name: "Will the site work on phones and tablets?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "Absolutely. Every site is designed mobile-first and tested on phones, tablets and desktops before launch. It will look and feel right whether your customer is on a small Android, an iPhone or an iPad."
+              }
+            },
+            {
+              "@type": "Question",
+              name: "What if my business grows - can I add more services or locations?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "Yes. Services are easy to manage yourself - just snap a photo and AI fills in the details. For bigger changes like extra locations, more languages, staff calendars or entire new sections, I can add them whenever you need. You won't outgrow the site and won't need to rebuild from scratch."
               }
             },
             {
@@ -385,8 +446,9 @@ export const siteContent = {
     heroTitleEnd: "онлайн записване",
     heroLead:
       "Идеално за бизнеси с услуги, които искат да приемат резервации, депозити и да управляват часове от едно място.",
-    heroSecondary: "Пробвай записването",
-    heroTrust: "Без външни страници за резервации. Без booking платформи. Всичко се случва на вашия сайт.",
+    heroSecondary: "Пробвай на жив сайт",
+    heroTrust: "Без външни страници за резервации. 100% mobile first. Ръчно изработен, не по шаблон.",
+    heroDemoHint: "Цъкни което и да е \"Нека поговорим\" - точно така клиентите ти ще резервират.",
     miniSite: "Вашият сайт",
     bookingBadge: "Интегрирано записване",
     bookingStatus: "Активно",
@@ -429,30 +491,41 @@ export const siteContent = {
     missionSubtitle: "Нито отзивите ти.",
     missionText:
       "Знам, защото самата аз управлявах салон. Повечето service бизнеси разчитат на платформи като Fresha или Treatwell. Те изпращат клиентите им в маркетплейс, където са заобиколени от конкуренти, а бизнесът им се превръща в поредното листване.\n\nРезервацията се случва. Брандът ти, не.\n\nСъздадох услугата си, за да променя това. **Всеки сайт, който правя, включва изцяло интегриран booking опит, който живее на твоя домейн, под твоя бранд.**",
-    portfolioEyebrow: "ИЗБРАНИ ПРОЕКТИ",
-    portfolioTitle: "Последни",
-    portfolioTitleAccent: "проекти",
+    portfolioEyebrow: "...И ОЩЕ АКТИВНИ САЙТОВЕ",
+    portfolioReadMore: "Прочети повече",
+    portfolioReadLess: "Свий",
+    portfolioTitle: "",
+    portfolioTitleAccent: "",
+    portfolioOutro: "Твоят е следващият?",
+    portfolioOutroCta: "Нека поговорим",
     portfolioProjects: [
       {
-        name: "Име на проект",
-        category: "Клиент",
-        ctaLabel: "Виж сайта",
-        href: "",
-        images: [],
+        name: "Urban by Delyana",
+        category: "Боядисване на коса",
+        location: "Варна",
+        languages: "BG / EN",
+        description: {
+          lead: "Двуезичен сайт с вградена буукинг система, изградена около услугите и цените.",
+        },
+        ctaLabel: "Виж на живо",
+        href: "https://salonurban.online",
+        video: `${R2}/urban-preview.mp4`,
       },
       {
-        name: "Име на проект",
-        category: "Клиент",
-        ctaLabel: "Виж сайта",
-        href: "",
-        images: [],
-      },
-      {
-        name: "Име на проект",
-        category: "Личен",
-        ctaLabel: "Скоро",
-        href: "",
-        images: [],
+        name: "Kozrlab",
+        category: "Авто детайлинг",
+        location: "Варна",
+        description: {
+          lead: "Авто детайлингът е странична дейност за тази клиентка и класическият booking календар не пасваше на живота ѝ.",
+          body: [
+            "Затова ѝ направих частен Telegram бот. Услуги, цени, снимки, дори текстовете на сайта — всичко се управлява от чата.",
+            "Тя обновява сайта между смените на основната си работа, директно от телефона. Всяка заявка за резервация идва като Telegram съобщение, на което отговаря за секунди.",
+          ],
+          kicker: "Без админ панел. Без логини. Без приложение за учене. Просто чат.",
+        },
+        ctaLabel: "Виж на живо",
+        href: "https://kozrlab.com",
+        video: `${R2}/kozrlab-preview.mp4`,
       },
     ],
     storyAuthor: "Деляна Николова",
@@ -503,22 +576,24 @@ export const siteContent = {
       "Бърз процес и ясна комуникация",
       "Създадено за дългосрочен растеж"
     ],
-    pillarsEyebrow: "МОИТЕ ЧЕТИРИ ПРИНЦИПА",
-    pillarsTitle: "Моите четири принципа",
+    pillarsEyebrow: "",
+    pillarsTitle: "Всъщност... това е портфолиото.",
+    pillarsSubtitle: "Ако вече усещаш, че е различно от типичните WordPress сайтове от 2015, точно така ще се чувства и твоят, направен около твоя бранд.",
+    pillarsCta: "Нека поговорим",
     pillarsItems: [
-      ["1×", "По поръчка, на ръка", "Всеки сайт се изгражда от нулата около твоя бранд. Без шаблони, без копи-пейст теми."],
-      ["2×", "Модерно, бързо и премиум", "Чист, безвременен дизайн, създаден да конвертира - не да следва тенденции, които остаряват за година."],
-      ["3×", "За растеж на бизнеса", "Проектирано за реален резултат - записвания, връщащи се клиенти, лоялност - не само за визия."],
-      ["4×", "Директна комуникация", "Говориш директно с човека, който прави сайта. Без посредници, без забавяния, без счупен телефон."]
+      ["01", "Ръчно изработено, без шаблони"],
+      ["02", "Премиум усещане, мигновено зареждане"],
+      ["03", "Създаден да записва, не да украсява"],
+      ["04", "Говориш директно с майстора"]
     ],
     speedEyebrow: "СЪЗДАДЕН ЗА 2026",
     speedTitle: "Без WordPress. Само скорост.",
     speedChecks: [
-      "Зареждане под секунда",
-      "95+ Lighthouse performance",
-      "Готов за WCAG достъпност",
-      "SEO-оптимизиран по подразбиране",
-      "Без излишни плъгини, без дупки в сигурността"
+      "Модерен стак",
+      "Оптимизиран за Google",
+      "Mobile-first",
+      "Достъпен",
+      "Без поддръжка"
     ],
     speedBody: [
       "2026 е - няма причина сайтът ти все още да върви на 20-годишен PHP CMS с 30 плъгина, които се бият помежду си.",
@@ -534,7 +609,7 @@ export const siteContent = {
       ["04", "Редизайн на сайт", "Обновяване на остарял сайт с по-бърз, по-чист и насочен към конверсия рестарт - на модерен стак."],
       ["05", "Мембършип портали", "Зони само за членове - класове, абонаменти, заключено съдържание и връщащи се клиенти."],
       ["06", "AI интеграции", "Умни асистенти за записвания, AI чат, автоматични напомняния и скенери на ценоразписи, които ти спестяват часове седмично."],
-      ["07", "Telegram ботове", "Персонални Telegram ботове, с които управляваш сайта си директно от телефона - сменяш цени, редактираш съдържание, проверяваш записвания и получаваш моментални известия, всичко от един чат."]
+      ["07", "Telegram ботове", "За собственици, които искат да управляват сайта на бизнеса си по най-лесния начин. Обновявай услуги, цени и текстове с едно съобщение, качвай снимки в галерии, управлявай свободни часове. И още много функции, които можем да вградим в твоя бот."]
     ],
     stepsEyebrow: "ПРОЦЕСЪТ",
     stepsTitle: "От първия разговор до готовия сайт.",
@@ -556,14 +631,22 @@ export const siteContent = {
       "Всеки проект е изработен по поръчка, което означава, че няма фиксиран пакет или универсална цена.",
       "Започваме с разговор, дефинираме точно какво ти трябва и ще ти изпратя ясна, прозрачна оферта преди да започне каквато и да е работа."
     ],
-    pricingCta: "Запази безплатно обаждане",
+    pricingCta: "Нека поговорим",
     faqEyebrow: "ЧЕСТО ЗАДАВАНИ ВЪПРОСИ",
     faqTitle: "Всичко, което клиентите обикновено питат преди старт",
+    faqShowMore: "Виж още въпроси",
+    faqShowLess: "Свий",
     faqs: [
       ["Колко време отнема проектът?", "Повечето проекти се завършват за 1 до 2 седмици според сложността и нужните материали."],
-      ["Трябва ли ми Calendly или друга буукинг платформа?", "Не. Буукинг изживяването е интегрирано директно във вашия сайт."],
-      ["Може ли да преработите сегашния ми сайт?", "Да. Можем да подобрим сегашния ви сайт или да създадем изцяло нов."],
+      ["Чий е сайтът след пускането?", "Домейнът, съдържанието и самият сайт остават твои - винаги. Единственото изключение е вградената booking система: тя работи върху моята платформа, така че ако някога приключим работа, booking слоят спира да работи. За landing страници или обикновени сайтове без booking всичко е изцяло твое, без условности."],
+      ["Мога ли сам да правя промени в текста и снимките?", "Абсолютно - не зависиш от мен. Всеки сайт идва с персонализиран админ панел, направен за телефона ти. Смени цена, замени снимка, редактирай описание - сайтът се обновява за секунди, без да ти трябва разработчик."],
+      ["Трябва ли да плащам за хостинг или да се притеснявам за лимит на посещенията?", "Не. Хостингът е включен и работи върху модерна edge инфраструктура, която мащабира автоматично. Дали сайтът ти има 100 посещения месечно или 100 000, плащаш същото - без изненадващи сметки и без забавяне в пикови моменти."],
       ["Могат ли клиентите да плащат онлайн?", "Да. Stripe е напълно интегриран, така че клиентите могат да платят депозит или цялата сума директно при записването. Възстановяванията и разписките също минават през Stripe."],
+      ["Трябва ли ми Calendly или друга буукинг платформа?", "Не. Буукинг изживяването е интегрирано директно във вашия сайт."],
+      ["Ами домейнът? Трябва ли вече да имам?", "Ако вече имаш домейн, го свързвам с новия сайт без допълнително заплащане. Ако нямаш, го купувам на твое име и го настройвам - ти оставаш собственик от първия ден."],
+      ["Ще работи ли сайтът на телефон и iPad?", "Абсолютно. Всеки сайт е проектиран mobile-first и се тества на телефони, таблети и десктоп преди пускане. Ще изглежда и усеща правилно дали клиентът ти е на малък Android, iPhone или iPad."],
+      ["Какво ако бизнесът ми порасне - мога ли да добавя още услуги или локации?", "Да. Услугите ги управляваш сам - просто снимаш и AI попълва детайлите. За по-големи промени като допълнителни локации, още езици, календари за служители или цели нови секции, ги добавям, когато ти потрябват. Няма да го надраснеш и няма да се налага да започваш от нулата."],
+      ["Може ли да преработите сегашния ми сайт?", "Да. Можем да подобрим сегашния ви сайт или да създадем изцяло нов."],
       ["Кой прави сайта?", "Всеки проект се дизайнира и изгражда директно от основателя, за да има последователно и лично отношение."],
       ["Какво става след пускането?", "След пускането съм тук, за да се уверя, че всичко работи гладко. Ако ти трябват ъпдейти, подобрения или нови функции с растежа на бизнеса ти, можем да го обсъдим."]
     ],
@@ -572,6 +655,16 @@ export const siteContent = {
     ctaAccent: "до потвърден час",
     ctaText: "Запазете безплатна консултация и нека поговорим за вашия проект.",
     footerText: "Къстъм сайтове с вградено онлайн записване",
+    footerLegal: [
+      ["Поверителност", "/bg/privacy"],
+      ["Условия", "/bg/terms"],
+      ["Възстановяване", "/bg/refunds"],
+    ],
+    footerSocials: [
+      ["instagram", "https://instagram.com/", "Instagram"],
+      ["linkedin", "https://linkedin.com/", "LinkedIn"],
+    ],
+    footerRights: "© 2026 Alter Nine. Всички права запазени.",
     localeLabel: "en",
     otherLocaleLabel: "bg",
     emailSubject: "Безплатно обаждане",

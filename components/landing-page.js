@@ -1,8 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Check } from "lucide-react";
+import { Instagram, Linkedin } from "lucide-react";
 import { BookingCta } from "@/components/booking-cta";
-import { Reveal, StaggerItem, CountUp } from "@/components/motion-helpers";
+import { Reveal, CountUp } from "@/components/motion-helpers";
 import { PillarsReveal } from "@/components/pillars-reveal";
 import { BuildPills } from "@/components/build-pills";
 import { CinematicHero } from "@/components/cinematic-hero";
@@ -10,6 +10,7 @@ import { FeaturesHeading } from "@/components/features-heading";
 import { AboutSection } from "@/components/about-section";
 import { MissionSection } from "@/components/mission-section";
 import { PortfolioSection } from "@/components/portfolio-section";
+import { FaqList } from "@/components/faq-list";
 import { JsonLd } from "@/components/json-ld";
 
 function Flow({ items }) {
@@ -38,13 +39,15 @@ export function LandingPage({ locale, content }) {
 
         <AboutSection content={content} />
 
-        <PortfolioSection content={content} />
-
         <PillarsReveal
           eyebrow={content.pillarsEyebrow}
           title={content.pillarsTitle}
+          subtitle={content.pillarsSubtitle}
           items={content.pillarsItems}
+          ctaLabel={content.pillarsCta}
         />
+
+        <PortfolioSection content={content} />
 
         <section className="section section-speed">
           <div className="container speed-shell">
@@ -59,15 +62,13 @@ export function LandingPage({ locale, content }) {
                 ))}
               </div>
             </Reveal>
-            <ul className="speed-checks">
-              {content.speedChecks.map((item, i) => {
-                const match = item.match(/^(\d+)\+\s(.*)/);
-                return (
-                  <StaggerItem key={item} index={i} stagger={0.09}>
-                    <span className="speed-check-icon" aria-hidden="true">
-                      <Check size={14} strokeWidth={2.5} />
-                    </span>
-                    <span>
+            <Reveal delay={0.15}>
+              <p className="speed-checks">
+                {content.speedChecks.map((item, i) => {
+                  const match = item.match(/^(\d+)\+\s(.*)/);
+                  return (
+                    <span key={item} className="speed-check-item">
+                      {i > 0 && <span className="speed-check-sep" aria-hidden="true">·</span>}
                       {match ? (
                         <>
                           <CountUp to={parseInt(match[1], 10)} suffix="+" /> {match[2]}
@@ -76,10 +77,10 @@ export function LandingPage({ locale, content }) {
                         item
                       )}
                     </span>
-                  </StaggerItem>
-                );
-              })}
-            </ul>
+                  );
+                })}
+              </p>
+            </Reveal>
           </div>
         </section>
 
@@ -161,12 +162,11 @@ export function LandingPage({ locale, content }) {
               <h2 className="faq-title">{content.faqTitle}</h2>
             </div>
             <div className="faq-list">
-              {content.faqs.map(([question, answer]) => (
-                <details className="faq-item" key={question}>
-                  <summary>{question}</summary>
-                  <p>{answer}</p>
-                </details>
-              ))}
+              <FaqList
+                faqs={content.faqs}
+                showMoreLabel={content.faqShowMore}
+                showLessLabel={content.faqShowLess}
+              />
             </div>
           </div>
         </section>
@@ -175,12 +175,33 @@ export function LandingPage({ locale, content }) {
 
       <footer className="site-footer">
         <div className="container footer-shell">
-          <div>
-            <Link className="brand footer-brand" href={locale === "bg" ? "/bg" : "/"}>
-              <span className="brand-mark" aria-hidden="true"></span>
-              <Image src="/9-logo.svg" alt="Alter Nine" width={100} height={28} />
-            </Link>
-            <p>{content.footerText}</p>
+          <div className="footer-top">
+            <div>
+              <Link className="brand footer-brand" href={locale === "bg" ? "/bg" : "/"}>
+                <Image src="/9-logo.svg" alt="Alter Nine" width={100} height={28} />
+              </Link>
+              <p>{content.footerText}</p>
+            </div>
+            {content.footerSocials?.length ? (
+              <div className="footer-socials">
+                {content.footerSocials.map(([key, url, label]) => (
+                  <a
+                    key={key}
+                    href={url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={label}
+                    className="footer-social"
+                  >
+                    {key === "instagram" ? (
+                      <Instagram size={18} strokeWidth={1.6} />
+                    ) : key === "linkedin" ? (
+                      <Linkedin size={18} strokeWidth={1.6} />
+                    ) : null}
+                  </a>
+                ))}
+              </div>
+            ) : null}
           </div>
           <div className="footer-links">
             <Link href="/" hrefLang="en" lang="en" aria-label="English">
@@ -190,6 +211,20 @@ export function LandingPage({ locale, content }) {
               {content.otherLocaleLabel}
             </Link>
             <a href="mailto:hello@alternine.co">hello@alternine.co</a>
+          </div>
+          <div className="footer-bottom">
+            {content.footerLegal?.length ? (
+              <div className="footer-legal">
+                {content.footerLegal.map(([label, href]) => (
+                  <Link key={href} href={href}>
+                    {label}
+                  </Link>
+                ))}
+              </div>
+            ) : null}
+            {content.footerRights ? (
+              <p className="footer-rights">{content.footerRights}</p>
+            ) : null}
           </div>
         </div>
       </footer>

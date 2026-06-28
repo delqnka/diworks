@@ -1,12 +1,16 @@
 .section {
   position: relative;
   width: 100%;
-  min-height: 100vh;
+  min-height: 100svh;
+  min-height: 100dvh;
   background: #010101;
   overflow: hidden;
   color: #fff;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+@supports not (min-height: 100dvh) {
+  .section { min-height: 100vh; }
 }
 
 /* NAV */
@@ -197,6 +201,11 @@
   object-fit: cover;
   object-position: center;
   z-index: 0;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  will-change: transform;
 }
 
 .scrim {
@@ -216,7 +225,7 @@
   justify-content: space-between;
   text-align: left;
   padding: 1rem 1.5rem 3rem;
-  min-height: calc(100vh - 5rem);
+  min-height: calc(100dvh - 5rem);
   max-width: 56rem;
   margin: 0 auto;
   gap: 2rem;
@@ -395,4 +404,14 @@
   letter-spacing: -0.005em;
   max-width: 28rem;
   margin: 0;
+}
+.demoHint {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: rgba(255,255,255,0.72);
+  font-size: 0.8rem;
+  font-weight: 400;
+  font-style: italic;
+  letter-spacing: -0.005em;
+  max-width: 28rem;
+  margin: 0 0 0.6rem;
 }

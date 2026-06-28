@@ -23,9 +23,12 @@ function Pill({ title, text, isFeature }) {
     setShift(s);
 
     const pillRect = wrapRef.current.getBoundingClientRect();
-    const spaceBelow = window.innerHeight - pillRect.bottom;
+    const container = wrapRef.current.closest(".section-build");
+    const bound = container ? container.getBoundingClientRect() : { bottom: window.innerHeight, top: 0 };
+    const spaceBelow = bound.bottom - pillRect.bottom;
+    const spaceAbove = pillRect.top - bound.top;
     const needed = rect.height + 16;
-    if (spaceBelow < needed && pillRect.top > needed) {
+    if (spaceBelow < needed && spaceAbove > needed) {
       setPlacement("top");
     } else {
       setPlacement("bottom");
