@@ -88,6 +88,7 @@ export const siteContent = {
         category: "Hair coloring",
         location: "Varna",
         languages: "BG / EN",
+        posterTheme: "urban",
         description: {
           lead: "A bilingual website with an integrated booking experience built around their services and pricing.",
         },
@@ -99,6 +100,7 @@ export const siteContent = {
         name: "Kozrlab",
         category: "Car detailing",
         location: "Varna",
+        posterTheme: "kozr",
         description: {
           lead: "Car detailing is a side hustle for this client and the booking calendar didn't fit her life.",
           body: [
@@ -504,6 +506,7 @@ export const siteContent = {
         category: "Боядисване на коса",
         location: "Варна",
         languages: "BG / EN",
+        posterTheme: "urban",
         description: {
           lead: "Двуезичен сайт с вградена буукинг система, изградена около услугите и цените.",
         },
@@ -515,6 +518,7 @@ export const siteContent = {
         name: "Kozrlab",
         category: "Авто детайлинг",
         location: "Варна",
+        posterTheme: "kozr",
         description: {
           lead: "Авто детайлингът е странична дейност за тази клиентка и класическият booking календар не пасваше на живота ѝ.",
           body: [

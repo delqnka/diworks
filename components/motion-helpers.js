@@ -1,11 +1,47 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { motion, useInView, useMotionValue, useTransform, animate } from "framer-motion";
+import {
+  animate,
+  motion,
+  useInView,
+  useMotionValue,
+  useReducedMotion,
+  useTransform,
+} from "framer-motion";
+
+export function useShouldReduceMotion() {
+  const prefersReducedMotion = useReducedMotion();
+  const [shouldReduceMotion, setShouldReduceMotion] = useState(prefersReducedMotion);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return undefined;
+
+    const mediaQuery = window.matchMedia("(max-width: 767px), (pointer: coarse)");
+    const update = () => {
+      setShouldReduceMotion(prefersReducedMotion || mediaQuery.matches);
+    };
+
+    update();
+    mediaQuery.addEventListener("change", update);
+    return () => mediaQuery.removeEventListener("change", update);
+  }, [prefersReducedMotion]);
+
+  return shouldReduceMotion;
+}
 
 export function Reveal({ children, delay = 0, y = 12, className }) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-10% 0px" });
+  const reduceMotion = useShouldReduceMotion();
+
+  if (reduceMotion) {
+    return (
+      <div ref={ref} className={className}>
+        {children}
+      </div>
+    );
+  }
 
   return (
     <motion.div
@@ -21,6 +57,12 @@ export function Reveal({ children, delay = 0, y = 12, className }) {
 }
 
 export function StaggerItem({ children, index = 0, className, stagger = 0.07 }) {
+  const reduceMotion = useShouldReduceMotion();
+
+  if (reduceMotion) {
+    return <li className={className}>{children}</li>;
+  }
+
   return (
     <motion.li
       className={className}
@@ -37,8 +79,17 @@ export function StaggerItem({ children, index = 0, className, stagger = 0.07 }) 
 export function StaggeredFade({ text, className, delay = 0, charDelay = 0.04 }) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-10% 0px" });
+  const reduceMotion = useShouldReduceMotion();
   const words = text.split(" ");
   let charIndex = 0;
+
+  if (reduceMotion) {
+    return (
+      <span ref={ref} className={className}>
+        {text}
+      </span>
+    );
+  }
 
   return (
     <span ref={ref} className={className}>

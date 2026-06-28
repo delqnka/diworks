@@ -1,58 +1,26 @@
 "use client";
 
-import { useRef, useEffect, useState } from "react";
+import { useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion, useInView } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { BookingCta } from "@/components/booking-cta";
+import { useShouldReduceMotion } from "@/components/motion-helpers";
 import styles from "./cinematic-hero.module.css";
 
 const VIDEO_SRC =
   "https://pub-a282b633397549478fc7e2204fa66fc2.r2.dev/hf_20260619_191346_9d19d66e-86a4-47f7-8dc6-712c1788c3b2.mp4";
 
-function useIsMobile() {
-  const [isMobile, setIsMobile] = useState(false);
-  useEffect(() => {
-    const mq = window.matchMedia("(max-width: 767px), (pointer: coarse)");
-    const update = () => setIsMobile(mq.matches);
-    update();
-    mq.addEventListener("change", update);
-    return () => mq.removeEventListener("change", update);
-  }, []);
-  return isMobile;
-}
-
 function StaggeredFade({ text, className }) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true });
-  const isMobile = useIsMobile();
+  const reduceMotion = useShouldReduceMotion();
 
-  if (isMobile) {
-    const mobileWords = text.split(" ");
+  if (reduceMotion) {
     return (
       <span ref={ref} className={className}>
-        {mobileWords.map((word, wi) => (
-          <span key={`mw-${wi}`}>
-            <motion.span
-              className={styles.wordSpan}
-              initial={{ opacity: 0, y: 14, filter: "blur(6px)" }}
-              animate={
-                inView
-                  ? { opacity: 1, y: 0, filter: "blur(0px)" }
-                  : { opacity: 0, y: 14, filter: "blur(6px)" }
-              }
-              transition={{
-                duration: 0.9,
-                delay: wi * 0.11,
-                ease: [0.16, 1, 0.3, 1],
-              }}
-            >
-              {word}
-            </motion.span>
-            {wi < mobileWords.length - 1 ? " " : null}
-          </span>
-        ))}
+        {text}
       </span>
     );
   }
@@ -88,6 +56,8 @@ function StaggeredFade({ text, className }) {
 }
 
 export function CinematicHero({ content, locale = "en" }) {
+  const reduceMotion = useShouldReduceMotion();
+
   return (
     <section className={styles.section}>
       <video
@@ -140,22 +110,13 @@ export function CinematicHero({ content, locale = "en" }) {
 
           <motion.p
             className={styles.lead}
-            initial={{ opacity: 0, y: 8, color: "rgba(255,255,255,0)" }}
-            animate={{
-              opacity: 1,
-              y: 0,
-              color: [
-                "rgba(255,255,255,0)",
-                "rgba(255,255,255,0.18)",
-                "rgba(255,255,255,0.45)",
-                "rgba(255,255,255,0.82)",
-              ],
-            }}
-            transition={{
-              opacity: { duration: 0.5, delay: 0.6, ease: "easeOut" },
-              y: { duration: 0.6, delay: 0.6, ease: [0.16, 1, 0.3, 1] },
-              color: { duration: 1.8, delay: 0.6, ease: "easeOut", times: [0, 0.35, 0.7, 1] },
-            }}
+            initial={reduceMotion ? false : { opacity: 0, y: 8 }}
+            animate={reduceMotion ? undefined : { opacity: 1, y: 0 }}
+            transition={
+              reduceMotion
+                ? undefined
+                : { duration: 0.6, delay: 0.35, ease: [0.16, 1, 0.3, 1] }
+            }
           >
             {content.heroLead}
           </motion.p>
@@ -164,9 +125,9 @@ export function CinematicHero({ content, locale = "en" }) {
         <div className={styles.bottomGroup}>
           <motion.div
             className={styles.actions}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.6, ease: "easeOut" }}
+            initial={reduceMotion ? false : { opacity: 0, y: 20 }}
+            animate={reduceMotion ? undefined : { opacity: 1, y: 0 }}
+            transition={reduceMotion ? undefined : { duration: 0.7, delay: 0.45, ease: "easeOut" }}
           >
             <BookingCta className={`${styles.glassBtn} ${styles.glassPrimary}`}>
               {content.navCta}
@@ -185,9 +146,9 @@ export function CinematicHero({ content, locale = "en" }) {
           {content.heroDemoHint ? (
             <motion.p
               className={styles.demoHint}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.7, delay: 0.85, ease: "easeOut" }}
+              initial={reduceMotion ? false : { opacity: 0 }}
+              animate={reduceMotion ? undefined : { opacity: 1 }}
+              transition={reduceMotion ? undefined : { duration: 0.7, delay: 0.65, ease: "easeOut" }}
             >
               {content.heroDemoHint}
             </motion.p>

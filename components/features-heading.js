@@ -2,6 +2,7 @@
 
 import { Fragment, useRef } from "react";
 import { motion, useInView } from "framer-motion";
+import { useShouldReduceMotion } from "@/components/motion-helpers";
 
 function StaggeredFade({ text, className, startIndex = 0, italic = false }) {
   const words = text.split(" ");
@@ -36,16 +37,21 @@ function StaggeredFade({ text, className, startIndex = 0, italic = false }) {
 export function FeaturesHeading({ title, accent }) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
+  const reduceMotion = useShouldReduceMotion();
 
   return (
     <h2 ref={ref} className="features-heading">
-      {inView && (
+      {(inView || reduceMotion) && (
         <>
-          <StaggeredFade text={title} />
+          {reduceMotion ? title : <StaggeredFade text={title} />}
           {accent && (
             <>
               {" "}
-              <StaggeredFade text={accent} startIndex={title.length} italic />
+              {reduceMotion ? (
+                <span className="features-heading-accent">{accent}</span>
+              ) : (
+                <StaggeredFade text={accent} startIndex={title.length} italic />
+              )}
             </>
           )}
         </>

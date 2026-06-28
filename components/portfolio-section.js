@@ -5,9 +5,10 @@ import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowUpRight, Play } from "lucide-react";
 import { BookingCta } from "@/components/booking-cta";
+import { useShouldReduceMotion } from "@/components/motion-helpers";
 import styles from "./portfolio-section.module.css";
 
-function ProjectVideo({ src }) {
+function ProjectVideo({ src, title, meta, ctaLabel, posterTheme }) {
   const ref = useRef(null);
   const [playing, setPlaying] = useState(false);
 
@@ -25,7 +26,7 @@ function ProjectVideo({ src }) {
 
   return (
     <div
-      className={styles.videoFrame}
+      className={`${styles.videoFrame} ${posterTheme ? styles[`videoFrame${posterTheme[0].toUpperCase()}${posterTheme.slice(1)}`] : ""}`}
       onClick={() => (playing ? stop() : start())}
       role="button"
       tabIndex={0}
@@ -42,6 +43,16 @@ function ProjectVideo({ src }) {
         aria-hidden="true"
         tabIndex={-1}
       />
+      {!playing && (
+        <div className={`${styles.videoPoster} ${posterTheme ? styles[`videoPoster${posterTheme[0].toUpperCase()}${posterTheme.slice(1)}`] : ""}`} aria-hidden="true">
+          <div className={styles.videoPosterGlow} />
+          <div className={styles.videoPosterContent}>
+            <p className={styles.videoPosterKicker}>{meta || "Selected project"}</p>
+            <p className={styles.videoPosterTitle}>{title}</p>
+            <span className={styles.videoPosterHint}>{ctaLabel || "Tap to preview"}</span>
+          </div>
+        </div>
+      )}
       {!playing && (
         <span className={styles.playOverlay} aria-hidden="true">
           <Play size={22} strokeWidth={1.8} fill="currentColor" />
@@ -65,6 +76,7 @@ function ProjectImages({ images }) {
 
 function ProjectRow({ project, readMoreLabel, readLessLabel }) {
   const [expanded, setExpanded] = useState(false);
+  const reduceMotion = useShouldReduceMotion();
   const meta = [project.category, project.location, project.languages]
     .filter(Boolean)
     .join(" · ");
@@ -72,10 +84,10 @@ function ProjectRow({ project, readMoreLabel, readLessLabel }) {
   return (
     <motion.article
       className={styles.row}
-      initial={{ opacity: 0, y: 24 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-15% 0px" }}
-      transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+      initial={reduceMotion ? false : { opacity: 0, y: 24 }}
+      whileInView={reduceMotion ? undefined : { opacity: 1, y: 0 }}
+      viewport={reduceMotion ? undefined : { once: true, margin: "-15% 0px" }}
+      transition={reduceMotion ? undefined : { duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
     >
       <header className={styles.rowHeader}>
         <h3 className={styles.rowTitle}>{project.name}</h3>
@@ -83,7 +95,13 @@ function ProjectRow({ project, readMoreLabel, readLessLabel }) {
       </header>
 
       {project.video ? (
-        <ProjectVideo src={project.video} />
+        <ProjectVideo
+          src={project.video}
+          title={project.name}
+          meta={meta}
+          ctaLabel={project.ctaLabel}
+          posterTheme={project.posterTheme}
+        />
       ) : project.images?.length ? (
         <ProjectImages images={project.images} />
       ) : null}
@@ -208,6 +226,7 @@ function PortfolioList({ projects, readMoreLabel, readLessLabel }) {
 }
 
 export function PortfolioSection({ content }) {
+  const reduceMotion = useShouldReduceMotion();
   const projects = content.portfolioProjects || [];
   if (projects.length === 0) return null;
 
@@ -241,10 +260,10 @@ export function PortfolioSection({ content }) {
       {content.portfolioOutro ? (
         <motion.div
           className={styles.outro}
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-15% 0px" }}
-          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          initial={reduceMotion ? false : { opacity: 0, y: 16 }}
+          whileInView={reduceMotion ? undefined : { opacity: 1, y: 0 }}
+          viewport={reduceMotion ? undefined : { once: true, margin: "-15% 0px" }}
+          transition={reduceMotion ? undefined : { duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         >
           <p className={styles.outroLine}>{content.portfolioOutro}</p>
           {content.portfolioOutroCta ? (
