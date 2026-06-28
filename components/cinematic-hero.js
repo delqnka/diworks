@@ -77,6 +77,9 @@ export function CinematicHero({ content, locale = "en" }) {
         preload="metadata"
         aria-hidden="true"
         tabIndex={-1}
+        disablePictureInPicture
+        disableRemotePlayback
+        controlsList="nodownload nofullscreen noremoteplayback"
         src={VIDEO_SRC}
       >
         <track kind="captions" src="/hero-captions.vtt" srcLang="en" label="No dialogue" default />

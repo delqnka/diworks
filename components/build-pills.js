@@ -6,9 +6,21 @@ import { AnimatePresence, motion } from "framer-motion";
 function Pill({ title, text, isFeature }) {
   const wrapRef = useRef(null);
   const popRef = useRef(null);
+  const openTimer = useRef(null);
   const [open, setOpen] = useState(false);
   const [shift, setShift] = useState(0);
   const [placement, setPlacement] = useState("bottom");
+
+  const scheduleOpen = () => {
+    if (openTimer.current) clearTimeout(openTimer.current);
+    openTimer.current = setTimeout(() => setOpen(true), 220);
+  };
+  const cancelOpen = () => {
+    if (openTimer.current) {
+      clearTimeout(openTimer.current);
+      openTimer.current = null;
+    }
+  };
 
   useLayoutEffect(() => {
     if (!open || !popRef.current || !wrapRef.current) return;
@@ -39,8 +51,13 @@ function Pill({ title, text, isFeature }) {
     <li
       ref={wrapRef}
       className="build-pill-wrap"
-      onMouseEnter={() => setOpen(true)}
-      onMouseLeave={() => {
+      onPointerEnter={(e) => {
+        if (e.pointerType !== "mouse") return;
+        scheduleOpen();
+      }}
+      onPointerLeave={(e) => {
+        if (e.pointerType !== "mouse") return;
+        cancelOpen();
         setOpen(false);
         setShift(0);
       }}

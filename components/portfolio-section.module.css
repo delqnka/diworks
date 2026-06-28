@@ -126,17 +126,19 @@
   text-decoration: none;
   border-bottom: 1px solid rgba(10, 10, 10, 0.25);
   padding-bottom: 0.15rem;
-  transition: border-color 200ms ease, gap 200ms ease;
+  transition: border-color 200ms cubic-bezier(0.23, 1, 0.32, 1), gap 200ms cubic-bezier(0.23, 1, 0.32, 1);
 }
-.rowLink:hover {
-  border-color: #0a0a0a;
-  gap: 0.55rem;
+@media (hover: hover) and (pointer: fine) {
+  .rowLink:hover {
+    border-color: #0a0a0a;
+    gap: 0.55rem;
+  }
+  .rowLink:hover svg {
+    transform: translate(2px, -2px);
+  }
 }
 .rowLink svg {
-  transition: transform 200ms ease;
-}
-.rowLink:hover svg {
-  transform: translate(2px, -2px);
+  transition: transform 200ms cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .videoFrame {
@@ -419,15 +421,21 @@
   text-decoration: none;
   border: none;
   cursor: pointer;
-  transition: transform 200ms ease, box-shadow 200ms ease;
+  transition: transform 200ms cubic-bezier(0.23, 1, 0.32, 1), box-shadow 200ms cubic-bezier(0.23, 1, 0.32, 1);
 }
-.outroCta:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 14px 32px rgba(10, 10, 10, 0.2);
+@media (hover: hover) and (pointer: fine) {
+  .outroCta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 32px rgba(10, 10, 10, 0.2);
+  }
+  .outroCta:hover svg {
+    transform: translate(2px, -2px);
+  }
+}
+.outroCta:active {
+  transform: scale(0.97);
+  transition-duration: 100ms;
 }
 .outroCta svg {
-  transition: transform 200ms ease;
-}
-.outroCta:hover svg {
-  transform: translate(2px, -2px);
+  transition: transform 200ms cubic-bezier(0.23, 1, 0.32, 1);
 }

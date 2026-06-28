@@ -2,6 +2,7 @@ import "./globals.css";
 import "@clicka1/booking/styles.css";
 import Script from "next/script";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import CookieBanner from "@/components/cookie-banner";
 import { Geist, Inter, Kanit, Cormorant_Garamond, Instrument_Sans } from "next/font/google";
 
 const GA_ID = "G-6D4DSTYWH7";
@@ -36,6 +37,14 @@ const instrumentSans = Instrument_Sans({
   display: "swap",
   variable: "--font-instrument"
 });
+
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+  viewportFit: "cover"
+};
 
 export const metadata = {
   metadataBase: new URL("https://alternine.co"),
@@ -106,17 +115,28 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body>
+        <Script id="ga-consent-default" strategy="beforeInteractive">
+          {`window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+window.gtag = gtag;
+gtag('consent', 'default', {
+  ad_storage: 'denied',
+  ad_user_data: 'denied',
+  ad_personalization: 'denied',
+  analytics_storage: 'denied',
+  wait_for_update: 500
+});`}
+        </Script>
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
           strategy="afterInteractive"
         />
         <Script id="ga-init" strategy="afterInteractive">
-          {`window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
+          {`gtag('js', new Date());
 gtag('config', '${GA_ID}');`}
         </Script>
         {children}
+        <CookieBanner />
         <SpeedInsights />
       </body>
     </html>

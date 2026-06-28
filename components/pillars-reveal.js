@@ -82,6 +82,9 @@ export function PillarsReveal({ eyebrow, title, subtitle, items, ctaLabel }) {
             preload="metadata"
             aria-hidden="true"
             tabIndex={-1}
+            disablePictureInPicture
+            disableRemotePlayback
+            controlsList="nodownload nofullscreen noremoteplayback"
             src={VIDEO_SRC}
           />
         </motion.div>
