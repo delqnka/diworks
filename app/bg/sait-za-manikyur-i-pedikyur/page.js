@@ -197,7 +197,7 @@ export default function NailsPage() {
               Нека изградим сайт, който показва работата ти професионално и превръща
               интереса в реални записвания.
             </p>
-            <div className={styles.heroActions}>
+            <div className={styles.heroActions} style={{ flexDirection: "column", alignItems: "center", gap: "1rem" }}>
               <BookingCta className={styles.primaryLink}>Нека поговорим</BookingCta>
               <Link className={styles.secondaryLink} href="/bg">
                 Назад към началната страница
