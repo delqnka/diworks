@@ -1,0 +1,190 @@
+.page {
+  background:
+    radial-gradient(circle at top, rgba(186, 160, 108, 0.14), transparent 30%),
+    linear-gradient(180deg, #0b0b0c 0%, #131316 16%, #f7f2ea 16%, #f7f2ea 100%);
+  color: #111;
+}
+
+.hero {
+  color: #fff;
+  padding: 7rem 1.5rem 5rem;
+}
+
+.heroInner,
+.sectionInner,
+.faqInner,
+.ctaInner {
+  max-width: 68rem;
+  margin: 0 auto;
+}
+
+.eyebrow {
+  margin: 0 0 1rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.hero h1 {
+  margin: 0;
+  max-width: 12ch;
+  font-size: clamp(2.8rem, 8vw, 5.5rem);
+  line-height: 0.94;
+  letter-spacing: -0.06em;
+}
+
+.heroLead {
+  max-width: 42rem;
+  margin: 1.5rem 0 0;
+  font-size: clamp(1.05rem, 2.2vw, 1.3rem);
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.heroActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  margin-top: 2rem;
+}
+
+.primaryLink,
+.secondaryLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3rem;
+  padding: 0.85rem 1.2rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.primaryLink {
+  background: #f4d8a5;
+  color: #111;
+}
+
+.secondaryLink {
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #fff;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.section,
+.faq,
+.cta {
+  padding: 4.5rem 1.5rem;
+}
+
+.sectionAlt {
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.section h2,
+.faq h2,
+.cta h2 {
+  margin: 0 0 1rem;
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+}
+
+.lede,
+.section p,
+.cta p {
+  font-size: 1.02rem;
+  line-height: 1.8;
+  color: rgba(17, 17, 17, 0.82);
+}
+
+.list {
+  display: grid;
+  gap: 0.85rem;
+  margin: 1.5rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.list li,
+.faqList li {
+  padding: 1rem 1.1rem;
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(17, 17, 17, 0.08);
+}
+
+.faqList {
+  display: grid;
+  gap: 1rem;
+  margin: 1.5rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.faqList strong {
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.relatedSection {
+  padding: 4.5rem 1.5rem;
+}
+
+.relatedGrid {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.relatedCard {
+  display: block;
+  padding: 1.15rem 1.1rem;
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(17, 17, 17, 0.08);
+  color: #111;
+  text-decoration: none;
+}
+
+.relatedCard strong {
+  display: block;
+  margin-bottom: 0.35rem;
+}
+
+.relatedCard span {
+  color: rgba(17, 17, 17, 0.72);
+}
+
+.cta {
+  background: #111;
+  color: #fff;
+}
+
+.cta p {
+  color: rgba(255, 255, 255, 0.78);
+  max-width: 42rem;
+}
+
+.cta .primaryLink {
+  margin-top: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .hero {
+    padding: 9rem 2.5rem 6rem;
+  }
+
+  .section,
+  .faq,
+  .relatedSection,
+  .cta {
+    padding: 6rem 2.5rem;
+  }
+
+  .relatedGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

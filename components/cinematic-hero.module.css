@@ -8,12 +8,17 @@
   color: #fff;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  touch-action: manipulation;
+  touch-action: pan-y;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   user-select: none;
 }
 .section * {
+  touch-action: pan-y;
+}
+.section a,
+.section button,
+.section [role="button"] {
   touch-action: manipulation;
 }
 @supports not (min-height: 100dvh) {
@@ -226,6 +231,8 @@
   -webkit-backface-visibility: hidden;
   will-change: transform;
   pointer-events: none;
+  touch-action: none;
+  -webkit-touch-callout: none;
 }
 
 .scrim {

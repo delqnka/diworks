@@ -1,0 +1,81 @@
+.section {
+  padding: 6rem 1.5rem 5rem;
+  background: #ffffff;
+}
+
+@media (min-width: 640px) {
+  .section {
+    padding: 7rem 2.5rem 6rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section {
+    padding: 9rem 3rem 8rem;
+  }
+}
+
+.shell {
+  max-width: 44rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2rem;
+  text-align: left;
+}
+
+.eyebrow {
+  margin: 0;
+  color: rgba(10, 10, 10, 0.5);
+}
+
+.title {
+  font-family: var(--font-cormorant), "Cormorant Garamond", serif;
+  font-weight: 500;
+  font-size: clamp(1.9rem, 4.4vw, 3.4rem);
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  max-width: 18ch;
+  margin: 0;
+  color: #0a0a0a;
+}
+
+.titleAccent {
+  font-style: italic;
+  font-weight: 500;
+}
+
+.lead {
+  margin: 0;
+  max-width: 36rem;
+  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 500;
+  font-size: clamp(1.05rem, 1.7vw, 1.2rem);
+  line-height: 1.55;
+  letter-spacing: -0.013em;
+  color: #0a0a0a;
+  font-feature-settings: "ss01", "cv11";
+  padding-top: 1rem;
+  border-top: 1px solid rgba(10, 10, 10, 0.1);
+  width: 100%;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  max-width: 36rem;
+  width: 100%;
+  margin: 0;
+}
+
+.bodyPara {
+  margin: 0;
+  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: clamp(0.95rem, 1.4vw, 1.05rem);
+  line-height: 1.7;
+  letter-spacing: -0.011em;
+  color: rgba(10, 10, 10, 0.72);
+  font-feature-settings: "ss01", "cv11";
+}

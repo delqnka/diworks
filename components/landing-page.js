@@ -9,6 +9,7 @@ import { CinematicHero } from "@/components/cinematic-hero";
 import { FeaturesHeading } from "@/components/features-heading";
 import { AboutSection } from "@/components/about-section";
 import { MissionSection } from "@/components/mission-section";
+import { IndependenceSection } from "@/components/independence-section";
 import { PortfolioSection } from "@/components/portfolio-section";
 import { FaqList } from "@/components/faq-list";
 import { JsonLd } from "@/components/json-ld";
@@ -36,6 +37,8 @@ export function LandingPage({ locale, content }) {
         <CinematicHero content={content} locale={locale} />
 
         <MissionSection content={content} />
+
+        <IndependenceSection content={content} />
 
         <AboutSection content={content} />
 
@@ -129,16 +132,37 @@ export function LandingPage({ locale, content }) {
           </div>
         </section>
 
-        <section className="visually-hidden" aria-hidden="true">
-          <h2>Website with built-in booking system for service businesses</h2>
-          <p>Alter Nine builds custom websites with integrated booking systems for hair salons, beauty salons, barbershops, wellness studios, clinics, coaches and consultants. No Calendly, no third-party booking pages - everything lives on your own website and brand.</p>
-          <ul>
-            {content.industries.map((item) => (
-              <li key={item}>Custom website with booking system for {item.toLowerCase()}</li>
-            ))}
-          </ul>
-          <p>Features include: built-in online booking, deposit collection, automated appointment reminders, AI pricelist scanner, business dashboard, and branded customer experience.</p>
-        </section>
+        {locale === "bg" ? (
+          <section className="section">
+            <div className="container seo-cluster-shell">
+              <div className="section-intro">
+                <p className="eyebrow">СТРАНИЦИ ПО НИШИ</p>
+                <h2 className="faq-title">Сайтове по поръчка за конкретни типове бизнес</h2>
+                <p className="section-lede">
+                  Ако търсиш решение за конкретна ниша, виж тези страници:
+                </p>
+              </div>
+              <div className="seo-cluster-grid">
+                <Link className="seo-cluster-card" href="/bg/sait-za-friziorski-salon">
+                  <strong>Сайт за фризьорски салон</strong>
+                  <span>С онлайн записване, депозити и професионално представяне на услугите.</span>
+                </Link>
+                <Link className="seo-cluster-card" href="/bg/sait-za-salon-za-krasota">
+                  <strong>Сайт за салон за красота</strong>
+                  <span>За салони, които искат силна визия и записвания директно през сайта.</span>
+                </Link>
+                <Link className="seo-cluster-card" href="/bg/sait-za-manikyur-i-pedikyur">
+                  <strong>Сайт за маникюр и педикюр</strong>
+                  <span>За студиа и специалисти, които искат портфолио и лесно записване.</span>
+                </Link>
+                <Link className="seo-cluster-card" href="/bg/sait-za-barbershop">
+                  <strong>Сайт за barbershop</strong>
+                  <span>За barbershop-и, които искат стилен сайт и ясен път до записване.</span>
+                </Link>
+              </div>
+            </div>
+          </section>
+        ) : null}
 
         <section className="section-pricing">
           <div className="pricing-block">

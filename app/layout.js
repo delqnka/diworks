@@ -1,8 +1,10 @@
 import "./globals.css";
 import "@clicka1/booking/styles.css";
 import Script from "next/script";
+import { headers } from "next/headers";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import CookieBanner from "@/components/cookie-banner";
+import WhatsAppButton from "@/components/whatsapp-button";
 import { Geist, Inter, Kanit, Cormorant_Garamond, Instrument_Sans } from "next/font/google";
 
 const GA_ID = "G-6D4DSTYWH7";
@@ -80,10 +82,13 @@ export const metadata = {
   }
 };
 
-export default function RootLayout({ children }) {
+export default async function RootLayout({ children }) {
+  const requestHeaders = await headers();
+  const htmlLang = requestHeaders.get("x-locale") === "bg" ? "bg" : "en";
+
   return (
     <html
-      lang="en"
+      lang={htmlLang}
       suppressHydrationWarning
       className={`${geist.variable} ${inter.variable} ${kanit.variable} ${cormorant.variable} ${instrumentSans.variable}`}
     >
@@ -136,6 +141,7 @@ gtag('consent', 'default', {
 gtag('config', '${GA_ID}');`}
         </Script>
         {children}
+        <WhatsAppButton />
         <CookieBanner />
         <SpeedInsights />
       </body>

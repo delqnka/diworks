@@ -1,9 +1,29 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import styles from "./cookie-banner.module.css";
 
 const STORAGE_KEY = "an_cookie_consent_v1";
+
+const COPY = {
+  en: {
+    text: "We use cookies for analytics to improve your experience. See our",
+    link: "privacy policy",
+    privacyHref: "/privacy",
+    reject: "Reject",
+    accept: "Accept",
+    aria: "Cookie consent"
+  },
+  bg: {
+    text: "Използваме бисквитки за аналитика, за да подобрим Вашето изживяване. Вижте нашата",
+    link: "Политика за поверителност",
+    privacyHref: "/bg/privacy",
+    reject: "Отказ",
+    accept: "Приемам",
+    aria: "Съгласие за бисквитки"
+  }
+};
 
 function applyConsent(granted) {
   if (typeof window === "undefined" || typeof window.gtag !== "function") return;
@@ -17,6 +37,8 @@ function applyConsent(granted) {
 }
 
 export default function CookieBanner() {
+  const pathname = usePathname() || "";
+  const copy = pathname.startsWith("/bg") ? COPY.bg : COPY.en;
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -43,17 +65,20 @@ export default function CookieBanner() {
   if (!visible) return null;
 
   return (
-    <div className={styles.banner} role="dialog" aria-live="polite" aria-label="Cookie consent">
+    <div className={styles.banner} role="dialog" aria-live="polite" aria-label={copy.aria}>
       <p className={styles.text}>
-        We use cookies for analytics to improve your experience. See our{" "}
-        <a href="/privacy" className={styles.link}>privacy policy</a>.
+        {copy.text}{" "}
+        <a href={copy.privacyHref} className={styles.link}>
+          {copy.link}
+        </a>
+        .
       </p>
       <div className={styles.actions}>
         <button type="button" className={styles.reject} onClick={() => decide(false)}>
-          Reject
+          {copy.reject}
         </button>
         <button type="button" className={styles.accept} onClick={() => decide(true)}>
-          Accept
+          {copy.accept}
         </button>
       </div>
     </div>

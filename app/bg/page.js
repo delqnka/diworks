@@ -1,7 +1,6 @@
 import { LandingPage } from "@/components/landing-page";
 import { siteContent } from "@/components/site-data";
 import { AppShell } from "@/components/app-shell";
-import { LangBg } from "./lang-bg";
 
 export const metadata = {
   title: {
@@ -43,7 +42,6 @@ export const metadata = {
 export default function BulgarianPage() {
   return (
     <AppShell locale="bg-BG">
-      <LangBg />
       <LandingPage locale="bg" content={siteContent.bg} />
     </AppShell>
   );
