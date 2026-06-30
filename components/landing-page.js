@@ -115,7 +115,7 @@ export function LandingPage({ locale, content }) {
               autoPlay
               loop
               playsInline
-              preload="metadata"
+              preload="none"
               aria-hidden="true"
               tabIndex={-1}
             />

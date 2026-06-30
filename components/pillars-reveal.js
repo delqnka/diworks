@@ -79,7 +79,7 @@ export function PillarsReveal({ eyebrow, title, subtitle, items, ctaLabel }) {
             muted
             loop
             playsInline
-            preload="metadata"
+            preload="none"
             aria-hidden="true"
             tabIndex={-1}
             disablePictureInPicture

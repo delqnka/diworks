@@ -8,6 +8,12 @@
     "start": "next start",
     "lint": "next lint"
   },
+  "browserslist": [
+    "chrome >= 87",
+    "edge >= 88",
+    "firefox >= 78",
+    "safari >= 14"
+  ],
   "dependencies": {
     "@clicka1/booking": "^0.2.6",
     "@vercel/speed-insights": "^2.0.0",

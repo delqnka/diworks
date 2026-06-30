@@ -39,7 +39,7 @@ function ProjectVideo({ src, title, meta, ctaLabel, posterTheme }) {
         muted
         loop
         playsInline
-        preload="metadata"
+        preload="none"
         aria-hidden="true"
         tabIndex={-1}
       />

@@ -1503,7 +1503,7 @@ img {
   margin: 0 auto;
 }
 .section-speed .eyebrow {
-  color: rgba(17, 17, 17, 0.55);
+  color: rgba(17, 17, 17, 0.75);
 }
 .speed-title {
   font-family: var(--font-cormorant), "Cormorant Garamond", serif;
