@@ -30,8 +30,8 @@ const siteSchema = {
       areaServed: ["BG", "EU", "GB", "US"],
       availableLanguage: ["en", "bg"],
       sameAs: [
-        "https://www.linkedin.com/company/alter-nine",
-        "https://www.instagram.com/alter.nine"
+        "https://www.linkedin.com/in/alternine",
+        "https://instagram.com/alternine.co"
       ],
       knowsAbout: [
         "Custom website design",

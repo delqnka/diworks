@@ -258,8 +258,8 @@ export const siteContent = {
       ["Terms", "/terms"],
     ],
     footerSocials: [
-      ["instagram", "https://instagram.com/", "Instagram"],
-      ["linkedin", "https://linkedin.com/", "LinkedIn"],
+      ["instagram", "https://instagram.com/alternine.co", "Instagram"],
+      ["linkedin", "https://www.linkedin.com/in/alternine", "LinkedIn"],
     ],
     footerRights: "© 2026 Alter Nine. All rights reserved.",
     localeLabel: "en",
@@ -682,8 +682,8 @@ export const siteContent = {
       ["Условия", "/bg/terms"],
     ],
     footerSocials: [
-      ["instagram", "https://instagram.com/", "Instagram"],
-      ["linkedin", "https://linkedin.com/", "LinkedIn"],
+      ["instagram", "https://instagram.com/alternine.co", "Instagram"],
+      ["linkedin", "https://www.linkedin.com/in/alternine", "LinkedIn"],
     ],
     footerRights: "© 2026 Alter Nine. Всички права запазени.",
     localeLabel: "en",
