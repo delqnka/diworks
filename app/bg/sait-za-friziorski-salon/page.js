@@ -1,26 +1,28 @@
 import Link from "next/link";
 import { AppShell } from "@/components/app-shell";
 import { BookingCta } from "@/components/booking-cta";
+import { SiteHeader } from "@/components/site-header";
+import { SiteFooter } from "@/components/site-footer";
 import styles from "./page.module.css";
 
 const pageUrl = "https://alternine.co/bg/sait-za-friziorski-salon";
 
 export const metadata = {
-  title: "Сайт за фризьорски салон с онлайн записване | Alter Nine",
+  title: "Сайт за фризьорски салон с онлайн записване",
   description:
     "Сайт за фризьорски салон по поръчка с вградена система за онлайн записване. Приемай часове, депозити и запитвания директно през собствения си сайт.",
   alternates: {
     canonical: pageUrl,
   },
   openGraph: {
-    title: "Сайт за фризьорски салон с онлайн записване | Alter Nine",
+    title: "Сайт за фризьорски салон с онлайн записване",
     description:
       "Сайт за фризьорски салон по поръчка с вградена система за онлайн записване.",
     url: pageUrl,
     locale: "bg_BG",
   },
   twitter: {
-    title: "Сайт за фризьорски салон с онлайн записване | Alter Nine",
+    title: "Сайт за фризьорски салон с онлайн записване",
     description:
       "Сайт за фризьорски салон по поръчка с вградена система за онлайн записване.",
   },
@@ -33,7 +35,7 @@ const jsonLd = {
       "@type": "WebPage",
       "@id": `${pageUrl}#webpage`,
       url: pageUrl,
-      name: "Сайт за фризьорски салон с онлайн записване | Alter Nine",
+      name: "Сайт за фризьорски салон с онлайн записване",
       inLanguage: "bg",
       about: { "@id": "https://alternine.co/#organization" },
       isPartOf: { "@id": "https://alternine.co/#website" },
@@ -57,34 +59,58 @@ const jsonLd = {
       mainEntity: [
         {
           "@type": "Question",
-          name: "Колко време отнема изработката на сайт за фризьорски салон?",
+          name: "Какво трябва да има един сайт за фризьорски салон?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Повечето проекти се завършват за 1 до 2 седмици според сложността, съдържанието и нужните функционалности.",
+            text: "Сайтът трябва да показва стила на салона, услугите, цените, екипа и да позволява лесно онлайн записване на час.",
           },
         },
         {
           "@type": "Question",
-          name: "Мога ли сама да сменям цени, снимки и услуги?",
+          name: "Подходящ ли е сайтът за салон с повече от един фризьор?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Да. Всеки сайт идва с лесен за ползване админ панел, съобразен и с телефон, така че да можеш да обновяваш съдържанието без разработчик.",
+            text: "Да. Сайтът може да бъде изграден така, че да представя повече от един специалист и да поддържа различни услуги и графици.",
           },
         },
         {
           "@type": "Question",
-          name: "Може ли сайтът да приема онлайн записвания и депозити?",
+          name: "Може ли сайтът да отразява стила на самия салон?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Да. Системата за записване е вградена директно в сайта и може да приема часове, депозити и потвърждения.",
+            text: "Да. Сайтът е по поръчка и може да бъде съобразен с визията, цветовете и характера на конкретния салон.",
           },
         },
         {
           "@type": "Question",
-          name: "Може ли сайтът да е на български и английски?",
+          name: "Чий е сайтът след пускането?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Да. При нужда сайтът може да бъде изграден двуезично, така че да обслужва и български, и чуждестранни клиенти.",
+            text: "Домейнът, съдържанието и самият сайт остават твои - винаги. Единственото изключение е вградената система за записване: тя работи върху моята инфраструктура, така че ако някога приключим работа, тази част спира да работи.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Мога ли сам да правя промени в текста и снимките?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Абсолютно - не зависиш от мен. Всеки сайт идва с персонализиран админ панел, направен за телефона ти. Смени цена, качи нова снимка или редактирай описание - сайтът се обновява за секунди, без да ти трябва разработчик.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Трябва ли да плащам за хостинг или да се притеснявам за лимит на посещенията?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Не. Хостингът е включен и работи върху модерна инфраструктура, която се разширява автоматично. Дали сайтът ти има 100 посещения месечно или 100 000, плащаш същото - без изненадващи сметки и без забавяне в пикови моменти.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Ще работи ли сайтът на телефон и iPad?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Абсолютно. Всеки сайт е създаден първо за мобилни устройства и се тества на телефони, таблети и десктоп преди пускане.",
           },
         },
       ],
@@ -99,101 +125,134 @@ export default function HairSalonPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <main className={styles.page}>
-        <section className={styles.hero}>
+      <SiteHeader locale="bg" />
+      <main className={styles.page} style={{ background: "#fff" }}>
+        <section
+          className={styles.hero}
+          style={{
+            backgroundImage:
+              "linear-gradient(180deg, rgba(11,11,12,0.72) 0%, rgba(11,11,12,0.6) 40%, rgba(80,80,82,0.55) 70%, rgba(200,200,200,0.7) 88%, rgba(245,245,245,0.95) 96%, rgba(255,255,255,1) 100%), url('https://media.alternine.co/ChatGPT%20Image%20Jun%2030%2C%202026%2C%2010_23_44%20AM.webp')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+          }}
+        >
           <div className={styles.heroInner}>
-            <p className={styles.eyebrow}>САЙТ ЗА ФРИЗЬОРСКИ САЛОН</p>
-            <h1>Сайт за фризьорски салон с вградена система за онлайн записване</h1>
+            <h1>Сайт за фризьорски салон с онлайн записвания</h1>
             <p className={styles.heroLead}>
-              Създаден за салони, които искат да представят услугите си професионално
-              и да приемат записвания, депозити и запитвания директно през собствения си сайт.
+              Собствен сайт за твоя фризьорски салон с вградено онлайн записване, без
+              комисионни и без чужд бранд между теб и клиента. Изграден по поръчка, за
+              салони в България, които искат сайтът да работи като част от салона.
             </p>
-            <div className={styles.heroActions}>
+            <div className={styles.heroActions} style={{ flexDirection: "column", alignItems: "flex-start" }}>
               <BookingCta className={styles.primaryLink}>Нека поговорим</BookingCta>
-              <a
+              <p className={styles.heroHint}>
+                Кликни „Нека поговорим“ - точно така клиентите ти ще резервират.
+              </p>
+              <Link
                 className={styles.secondaryLink}
-                href="https://salonurban.online/bg"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/bg"
+                style={{
+                  background: "transparent",
+                  border: "none",
+                  padding: "0.85rem 0",
+                  textDecoration: "underline",
+                  textUnderlineOffset: "4px",
+                }}
               >
-                Виж реален пример
-              </a>
+                Виж началната страница
+              </Link>
             </div>
           </div>
         </section>
 
         <section className={styles.section}>
           <div className={styles.sectionInner}>
-            <h2>Защо един фризьорски салон има нужда от собствен сайт</h2>
+            <p className={styles.eyebrow}>Защо да работиш с мен?</p>
+            <h2>Сайт, който остава под твой контрол.</h2>
             <p className={styles.lede}>
-              Instagram може да привлича внимание, но не е достатъчен за бизнес, който
-              иска да изглежда професионално и да превръща интереса в записани часове.
-              Собственият сайт показва услугите ти, изгражда доверие и води клиента
-              директно до действие.
+              Най-голямото предимство на сайтовете, които изграждам, е че няма да ти се
+              налага да плащаш за всяка дребна корекция.
             </p>
-          </div>
-        </section>
-
-        <section className={`${styles.section} ${styles.sectionAlt}`}>
-          <div className={styles.sectionInner}>
-            <h2>Какво трябва да има един добър сайт за фризьорски салон</h2>
-            <ul className={styles.list}>
-              <li>Ясно представяне на услуги, терапии и цени</li>
-              <li>Галерия с реални резултати и усещане за стила на салона</li>
-              <li>Онлайн записване на час директно през сайта</li>
-              <li>Възможност за депозити при нужда</li>
-              <li>Контакт, локация и лесна връзка от телефон</li>
-              <li>Мобилна версия, която работи бързо и без дразнещи проблеми</li>
-            </ul>
+            <p className={styles.lede}>
+              Винаги съм държала на независимостта в собствения си бизнес и точно затова
+              искам да дам същото и на клиентите си.
+            </p>
+            <p className={styles.lede}>
+              Създадох контролен панел, през който можеш сам да редактираш цени, заглавия,
+              текстове, услуги, както и да качваш и триеш снимки, без да зависиш от
+              програмист за всяка малка промяна.
+            </p>
+            <p className={styles.lede}>
+              Интегрирах и изкуствен интелект, който може да прочете ценоразписа ти за
+              секунда и автоматично да въведе услугите в сайта, без да се налага да ги
+              добавяш ръчно.
+            </p>
+            <p className={styles.lede}>
+              Всеки записан клиент влиза в клиентската база на сайта ти, където можеш да
+              виждаш посещенията, историята на записванията и похарчените суми.
+            </p>
           </div>
         </section>
 
         <section className={styles.section}>
           <div className={styles.sectionInner}>
-            <h2>Онлайн записване директно през твоя сайт</h2>
-            <p>
-              Клиентите не трябва да напускат сайта ти, за да си запазят час. Когато
-              системата за записване е вградена, всичко остава под твоя бранд, на твоя
-              домейн и в изживяване, което изглежда като част от салона ти, а не като
-              чужда платформа.
-            </p>
-          </div>
-        </section>
-
-        <section className={`${styles.section} ${styles.sectionAlt}`}>
-          <div className={styles.sectionInner}>
-            <h2>Сайт по поръчка, а не шаблон</h2>
-            <p>
-              Всеки фризьорски салон има различен стил, различни услуги и различна
-              клиентела. Затова сайтът трябва да е съобразен с твоята визия, начин на
-              работа и цели, а не да изглежда като поредния масов шаблон.
-            </p>
+            <p className={styles.eyebrow}>Есенцията</p>
+            <h2>Какво трябва да има един добър сайт за фризьорски салон</h2>
+            <ul className={styles.essentials}>
+              <li>
+                <span className={styles.essentialNum}>01</span>
+                <span className={styles.essentialTitle}>Ясни услуги и цени</span>
+                <p className={styles.essentialDesc}>
+                  Прозрачност от първия скрол — клиентът знае какво получава и колко струва, преди да натисне „запиши“.
+                </p>
+              </li>
+              <li>
+                <span className={styles.essentialNum}>02</span>
+                <span className={styles.essentialTitle}>Екип и стил</span>
+                <p className={styles.essentialDesc}>
+                  Лицата зад ножиците и характерът на салона — това превръща случаен посетител в редовен клиент.
+                </p>
+              </li>
+              <li>
+                <span className={styles.essentialNum}>03</span>
+                <span className={styles.essentialTitle}>Онлайн записване директно</span>
+                <p className={styles.essentialDesc}>
+                  Без редирект към чужда платформа и без комисионни — часът се резервира за секунди, в твоя бранд. Ти и клиентът получавате имейл с потвърждение, а след това автоматични напомнящи имейли преди часа.
+                </p>
+              </li>
+              <li>
+                <span className={styles.essentialNum}>04</span>
+                <span className={styles.essentialTitle}>100% mobile first</span>
+                <p className={styles.essentialDesc}>
+                  Сайтът е проектиран първо за телефон, защото оттам идват клиентите ти.
+                </p>
+              </li>
+              <li>
+                <span className={styles.essentialNum}>05</span>
+                <span className={styles.essentialTitle}>AI чат асистент</span>
+                <p className={styles.essentialDesc}>
+                  По избор — собствен AI асистент, който разговаря с клиентите ти и запазва часове вместо теб, директно през сайта, без да вдигаш телефона.
+                </p>
+              </li>
+              <li>
+                <span className={styles.essentialNum}>06</span>
+                <span className={styles.essentialTitle}>Визия с характер</span>
+                <p className={styles.essentialDesc}>
+                  Дизайн, изграден около твоя салон с модерна технология, а не нагласен върху темплейт от 2015 год.
+                </p>
+              </li>
+            </ul>
           </div>
         </section>
 
         <section className={styles.section}>
           <div className={styles.sectionInner}>
             <h2>Подходящ за</h2>
-            <ul className={styles.list}>
-              <li>Фризьорски салони</li>
-              <li>Студиа за коса</li>
-              <li>Салони за боядисване и терапии</li>
+            <ul className={styles.pills}>
               <li>Самостоятелни фризьори</li>
-              <li>Салони с повече от един специалист</li>
-            </ul>
-          </div>
-        </section>
-
-        <section className={`${styles.section} ${styles.sectionAlt}`}>
-          <div className={styles.sectionInner}>
-            <h2>Какво получаваш</h2>
-            <ul className={styles.list}>
-              <li>Сайт по поръчка, създаден за твоя салон</li>
-              <li>Вградена система за записване</li>
-              <li>Приемане на депозити</li>
-              <li>Админ панел, удобен и от телефон</li>
-              <li>Бързо зареждане и добра SEO основа</li>
-              <li>Възможност за двуезична версия при нужда</li>
+              <li>Фризьорски салони с повече от един специалист</li>
+              <li>Студиа за боядисване и терапии</li>
             </ul>
           </div>
         </section>
@@ -201,64 +260,63 @@ export default function HairSalonPage() {
         <section className={styles.faq}>
           <div className={styles.faqInner}>
             <h2>Често задавани въпроси</h2>
-            <ul className={styles.faqList}>
-              <li>
-                <strong>Колко време отнема изработката на сайт за фризьорски салон?</strong>
-                Повечето проекти се завършват за 1 до 2 седмици според сложността, съдържанието и нужните функционалности.
-              </li>
-              <li>
-                <strong>Мога ли сама да сменям цени, снимки и услуги?</strong>
-                Да. Всеки сайт идва с лесен за ползване админ панел, съобразен и с телефон.
-              </li>
-              <li>
-                <strong>Може ли сайтът да приема онлайн записвания и депозити?</strong>
-                Да. Системата за записване е вградена директно в сайта и може да приема часове, депозити и потвърждения.
-              </li>
-              <li>
-                <strong>Може ли сайтът да е на български и английски?</strong>
-                Да. При нужда сайтът може да бъде изграден двуезично.
-              </li>
-            </ul>
+            <div className={styles.faqList}>
+              {[
+                ["Какво трябва да има един сайт за фризьорски салон?", "Сайтът трябва да показва стила на салона, услугите, цените, екипа и да позволява лесно онлайн записване на час."],
+                ["Подходящ ли е сайтът за салон с повече от един фризьор?", "Да. Сайтът може да бъде изграден така, че да представя повече от един специалист и да поддържа различни услуги и графици."],
+                ["Може ли сайтът да отразява стила на самия салон?", "Да. Сайтът е по поръчка и може да бъде съобразен с визията, цветовете и характера на конкретния салон."],
+                ["Чий е сайтът след пускането?", "Домейнът, съдържанието и самият сайт остават твои - винаги. Единственото изключение е вградената система за записване: тя работи върху моята инфраструктура, така че ако някога приключим работа, тази част спира да работи."],
+                ["Мога ли сам да правя промени в текста и снимките?", "Абсолютно - не зависиш от мен. Всеки сайт идва с персонализиран админ панел, направен за телефона ти. Смени цена, качи нова снимка или редактирай описание - сайтът се обновява за секунди, без да ти трябва разработчик."],
+                ["Трябва ли да плащам за хостинг или да се притеснявам за лимит на посещенията?", "Не. Хостингът е включен и работи върху модерна инфраструктура, която се разширява автоматично. Дали сайтът ти има 100 посещения месечно или 100 000, плащаш същото - без изненадващи сметки и без забавяне в пикови моменти."],
+                ["Ще работи ли сайтът на телефон и iPad?", "Абсолютно. Всеки сайт е създаден първо за мобилни устройства и се тества на телефони, таблети и десктоп преди пускане."],
+              ].map(([q, a]) => (
+                <details key={q} className={styles.faqItem}>
+                  <summary className={styles.faqQ}>
+                    <span>{q}</span>
+                    <span className={styles.faqIcon} aria-hidden="true">+</span>
+                  </summary>
+                  <p className={styles.faqA}>{a}</p>
+                </details>
+              ))}
+            </div>
           </div>
         </section>
 
         <section className={styles.relatedSection}>
           <div className={styles.sectionInner}>
             <h2>Разгледай и други страници по ниши</h2>
-            <div className={styles.relatedGrid}>
-              <Link className={styles.relatedCard} href="/bg/sait-za-salon-za-krasota">
-                <strong>Сайт за салон за красота</strong>
-                <span>За салони с повече услуги, терапии и силно визуално представяне.</span>
-              </Link>
-              <Link className={styles.relatedCard} href="/bg/sait-za-manikyur-i-pedikyur">
-                <strong>Сайт за маникюр и педикюр</strong>
-                <span>За специалисти и студиа, които разчитат на силно портфолио и лесно записване.</span>
-              </Link>
-              <Link className={styles.relatedCard} href="/bg/sait-za-barbershop">
-                <strong>Сайт за barbershop</strong>
-                <span>За barbershop-и, които искат стилен сайт и уверен път до записване.</span>
-              </Link>
-            </div>
+            <ul className={styles.relatedLinks}>
+              <li><Link href="/bg/sait-za-barbershop">Сайт за barbershop</Link></li>
+              <li><Link href="/bg/sait-za-salon-za-krasota">Сайт за салон за красота</Link></li>
+              <li><Link href="/bg/sait-za-manikyur-i-pedikyur">Сайт за маникюр и педикюр</Link></li>
+            </ul>
           </div>
         </section>
 
         <section className={styles.cta}>
           <div className={styles.ctaInner}>
-            <p className={styles.eyebrow}>ГОТОВ ЛИ СИ ЗА ПРОМЯНА?</p>
-            <h2>Готов ли си твоят фризьорски салон да има сайт, който работи за него?</h2>
-            <p>
-              Нека създадем уебсайт, който представя работата ти професионално и
-              превръща интереса в реални записвания.
-            </p>
+            <h2>Готов ли си твоят салон да има сайт, който работи за него?</h2>
             <div className={styles.heroActions} style={{ flexDirection: "column", alignItems: "center", gap: "1rem" }}>
               <BookingCta className={styles.primaryLink}>Нека поговорим</BookingCta>
-              <Link className={styles.secondaryLink} href="/bg">
-                Назад към началната страница
+              <Link
+                href="/bg"
+                style={{
+                  background: "transparent",
+                  border: "none",
+                  padding: "0.2rem 0",
+                  color: "#fff",
+                  fontSize: "0.85rem",
+                  textDecoration: "underline",
+                  textUnderlineOffset: "4px",
+                }}
+              >
+                Начална страница
               </Link>
             </div>
           </div>
         </section>
       </main>
+      <SiteFooter locale="bg" />
     </AppShell>
   );
 }

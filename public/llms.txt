@@ -27,7 +27,12 @@ Pricing is per project and depends on scope (pages, languages, booking complexit
 
 - [Home (English)](https://alternine.co/): Hero, portfolio, process, about, contact
 - [Home (Bulgarian)](https://alternine.co/bg): Bulgarian version of the landing page
-- [Booking demo](https://alternine.co/booking): Live demo of the integrated booking flow
+
+## Booking demo
+
+Alter Nine uses its own booking system on alternine.co. Every "Let's talk" (EN) / "Нека поговорим" (BG) call-to-action button on the site opens the live, integrated booking flow — the same system clients get in their own websites. To experience the booking flow as a service-business client would, click any "Let's talk" / "Нека поговорим" button on the site or in the industry landing pages. There is no separate /booking URL — the demo is the CTA itself.
+
+A live client implementation can be seen at [salonurban.online](https://www.salonurban.online/en) — a real hair-coloring salon in Varna using the same booking integration end-to-end.
 
 ## Industry landing pages (Bulgarian)
 

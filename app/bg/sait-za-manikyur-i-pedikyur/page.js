@@ -6,21 +6,21 @@ import styles from "../sait-za-friziorski-salon/page.module.css";
 const pageUrl = "https://alternine.co/bg/sait-za-manikyur-i-pedikyur";
 
 export const metadata = {
-  title: "Сайт за маникюр и педикюр с онлайн записване | Alter Nine",
+  title: "Сайт за маникюр и педикюр с онлайн записване",
   description:
     "Сайт за маникюр и педикюр по поръчка с вградена система за онлайн записване. Покажи услугите, цените и работата си професионално и приемай часове през сайта си.",
   alternates: {
     canonical: pageUrl,
   },
   openGraph: {
-    title: "Сайт за маникюр и педикюр с онлайн записване | Alter Nine",
+    title: "Сайт за маникюр и педикюр с онлайн записване",
     description:
       "Сайт за маникюр и педикюр по поръчка с вградена система за онлайн записване.",
     url: pageUrl,
     locale: "bg_BG",
   },
   twitter: {
-    title: "Сайт за маникюр и педикюр с онлайн записване | Alter Nine",
+    title: "Сайт за маникюр и педикюр с онлайн записване",
     description:
       "Сайт за маникюр и педикюр по поръчка с вградена система за онлайн записване.",
   },
@@ -33,7 +33,7 @@ const jsonLd = {
       "@type": "WebPage",
       "@id": `${pageUrl}#webpage`,
       url: pageUrl,
-      name: "Сайт за маникюр и педикюр с онлайн записване | Alter Nine",
+      name: "Сайт за маникюр и педикюр с онлайн записване",
       inLanguage: "bg",
       about: { "@id": "https://alternine.co/#organization" },
       isPartOf: { "@id": "https://alternine.co/#website" },

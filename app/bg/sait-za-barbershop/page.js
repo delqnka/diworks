@@ -8,21 +8,21 @@ import styles from "../sait-za-friziorski-salon/page.module.css";
 const pageUrl = "https://alternine.co/bg/sait-za-barbershop";
 
 export const metadata = {
-  title: "Сайт за barbershop с онлайн записване | Alter Nine",
+  title: "Сайт за barbershop с онлайн записване",
   description:
     "Сайт за barbershop по поръчка с вградена система за онлайн записване. Покажи стила, услугите и цените си и приемай записвания директно през сайта.",
   alternates: {
     canonical: pageUrl,
   },
   openGraph: {
-    title: "Сайт за barbershop с онлайн записване | Alter Nine",
+    title: "Сайт за barbershop с онлайн записване",
     description:
       "Сайт за barbershop по поръчка с вградена система за онлайн записване.",
     url: pageUrl,
     locale: "bg_BG",
   },
   twitter: {
-    title: "Сайт за barbershop с онлайн записване | Alter Nine",
+    title: "Сайт за barbershop с онлайн записване",
     description:
       "Сайт за barbershop по поръчка с вградена система за онлайн записване.",
   },
@@ -35,7 +35,7 @@ const jsonLd = {
       "@type": "WebPage",
       "@id": `${pageUrl}#webpage`,
       url: pageUrl,
-      name: "Сайт за barbershop с онлайн записване | Alter Nine",
+      name: "Сайт за barbershop с онлайн записване",
       inLanguage: "bg",
       about: { "@id": "https://alternine.co/#organization" },
       isPartOf: { "@id": "https://alternine.co/#website" },

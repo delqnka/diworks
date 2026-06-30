@@ -6,21 +6,21 @@ import styles from "../sait-za-friziorski-salon/page.module.css";
 const pageUrl = "https://alternine.co/bg/sait-za-salon-za-krasota";
 
 export const metadata = {
-  title: "Сайт за салон за красота с онлайн записване | Alter Nine",
+  title: "Сайт за салон за красота с онлайн записване",
   description:
     "Сайт за салон за красота по поръчка с вградена система за онлайн записване. Представи услугите си професионално и приемай записвания през собствения си сайт.",
   alternates: {
     canonical: pageUrl,
   },
   openGraph: {
-    title: "Сайт за салон за красота с онлайн записване | Alter Nine",
+    title: "Сайт за салон за красота с онлайн записване",
     description:
       "Сайт за салон за красота по поръчка с вградена система за онлайн записване.",
     url: pageUrl,
     locale: "bg_BG",
   },
   twitter: {
-    title: "Сайт за салон за красота с онлайн записване | Alter Nine",
+    title: "Сайт за салон за красота с онлайн записване",
     description:
       "Сайт за салон за красота по поръчка с вградена система за онлайн записване.",
   },
@@ -33,7 +33,7 @@ const jsonLd = {
       "@type": "WebPage",
       "@id": `${pageUrl}#webpage`,
       url: pageUrl,
-      name: "Сайт за салон за красота с онлайн записване | Alter Nine",
+      name: "Сайт за салон за красота с онлайн записване",
       inLanguage: "bg",
       about: { "@id": "https://alternine.co/#organization" },
       isPartOf: { "@id": "https://alternine.co/#website" },
