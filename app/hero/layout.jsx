@@ -5,10 +5,6 @@ export const metadata = {
 export default function HeroLayout({ children }) {
   return (
     <>
-      <link
-        rel="stylesheet"
-        href="https://db.onlinewebfonts.com/c/2bf40ab72ea4897a3fd9b6e48b233a19?family=Garamond"
-      />
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       <link

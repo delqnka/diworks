@@ -11,8 +11,11 @@ export const metadata = {
   alternates: {
     canonical: "https://alternine.co/bg",
     languages: {
+      "en-US": "https://alternine.co/",
+      "en-GB": "https://alternine.co/",
       en: "https://alternine.co/",
-      bg: "https://alternine.co/bg"
+      bg: "https://alternine.co/bg",
+      "x-default": "https://alternine.co/"
     }
   },
   keywords: [
