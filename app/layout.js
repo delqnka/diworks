@@ -5,6 +5,7 @@ import { headers } from "next/headers";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import CookieBanner from "@/components/cookie-banner";
 import WhatsAppButton from "@/components/whatsapp-button";
+import { SiteSchema } from "@/components/site-schema";
 import { Geist, Inter, Kanit, Cormorant_Garamond, Instrument_Sans } from "next/font/google";
 
 const GA_ID = "G-6D4DSTYWH7";
@@ -43,8 +44,6 @@ const instrumentSans = Instrument_Sans({
 export const viewport = {
   width: "device-width",
   initialScale: 1,
-  maximumScale: 1,
-  userScalable: false,
   viewportFit: "cover"
 };
 
@@ -93,31 +92,9 @@ export default async function RootLayout({ children }) {
       className={`${geist.variable} ${inter.variable} ${kanit.variable} ${cormorant.variable} ${instrumentSans.variable}`}
     >
       <head>
-        <link rel="preconnect" href="https://db.onlinewebfonts.com" />
         <link rel="preconnect" href="https://pub-a282b633397549478fc7e2204fa66fc2.r2.dev" />
         <link rel="preconnect" href="https://app.alternine.co" />
-        <link
-          rel="preload"
-          as="style"
-          href="https://db.onlinewebfonts.com/c/2bf40ab72ea4897a3fd9b6e48b233a19?family=Garamond"
-        />
-        <link
-          rel="stylesheet"
-          href="https://db.onlinewebfonts.com/c/2bf40ab72ea4897a3fd9b6e48b233a19?family=Garamond"
-          media="print"
-          suppressHydrationWarning
-        />
-        <noscript>
-          <link
-            rel="stylesheet"
-            href="https://db.onlinewebfonts.com/c/2bf40ab72ea4897a3fd9b6e48b233a19?family=Garamond"
-          />
-        </noscript>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `document.querySelectorAll('link[media="print"][href*="onlinewebfonts"]').forEach(l=>l.media='all');`
-          }}
-        />
+        <SiteSchema />
       </head>
       <body>
         <Script id="ga-consent-default" strategy="beforeInteractive">
@@ -134,9 +111,9 @@ gtag('consent', 'default', {
         </Script>
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
-        <Script id="ga-init" strategy="afterInteractive">
+        <Script id="ga-init" strategy="lazyOnload">
           {`gtag('js', new Date());
 gtag('config', '${GA_ID}');`}
         </Script>

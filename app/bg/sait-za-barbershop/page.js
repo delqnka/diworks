@@ -41,6 +41,19 @@ const jsonLd = {
       isPartOf: { "@id": "https://alternine.co/#website" },
     },
     {
+      "@type": "Service",
+      "@id": `${pageUrl}#service`,
+      name: "Сайт за barbershop с онлайн записване",
+      serviceType: "Изработка на уеб сайт с вградена система за записване",
+      provider: { "@id": "https://alternine.co/#organization" },
+      areaServed: ["BG", "EU"],
+      audience: {
+        "@type": "BusinessAudience",
+        audienceType: "Barbershop-и и бръснари"
+      },
+      inLanguage: "bg"
+    },
+    {
       "@type": "FAQPage",
       "@id": `${pageUrl}#faq`,
       mainEntity: [

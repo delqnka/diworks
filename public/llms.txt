@@ -2,7 +2,7 @@
 
 > Custom websites with built-in booking systems for service businesses. Accept bookings, deposits and manage appointments from a single site — no third-party booking pages, no platforms.
 
-Founder: Delyana. Based in Bulgaria, working with service businesses across Europe, the UK and the US (English and Bulgarian).
+Founder: Delyana. Legal entity: Booka LTD (Буука ЕООД), ЕИК 208363525, registered in Bulgaria. Working with service businesses across Europe, the UK and the US (English and Bulgarian).
 
 ## What Alter Nine does
 
@@ -11,11 +11,30 @@ Founder: Delyana. Based in Bulgaria, working with service businesses across Euro
 - Deposit collection and appointment management from one dashboard
 - Bilingual support (English / Bulgarian) where needed
 
+## How it works
+
+1. Discovery call to understand the business, services and audience.
+2. Custom design and build — no templates, no page builders.
+3. Booking system embedded into the site with services, prices and deposits.
+4. Launch on the client's own domain. Client owns the domain, content and site.
+5. The booking system runs on Alter Nine's infrastructure; if the engagement ends, only that integration stops.
+
+## Pricing
+
+Pricing is per project and depends on scope (pages, languages, booking complexity, integrations). Typical custom site with integrated booking starts in the low four-figure EUR range. Quote provided after the discovery call.
+
 ## Pages
 
 - [Home (English)](https://alternine.co/): Hero, portfolio, process, about, contact
 - [Home (Bulgarian)](https://alternine.co/bg): Bulgarian version of the landing page
 - [Booking demo](https://alternine.co/booking): Live demo of the integrated booking flow
+
+## Industry landing pages (Bulgarian)
+
+- [Сайт за фризьорски салон](https://alternine.co/bg/sait-za-friziorski-salon)
+- [Сайт за салон за красота](https://alternine.co/bg/sait-za-salon-za-krasota)
+- [Сайт за маникюр и педикюр](https://alternine.co/bg/sait-za-manikyur-i-pedikyur)
+- [Сайт за barbershop](https://alternine.co/bg/sait-za-barbershop)
 
 ## Selected work
 
@@ -26,3 +45,4 @@ Founder: Delyana. Based in Bulgaria, working with service businesses across Euro
 ## Contact
 
 - Email: hello@alternine.co
+- Website: https://alternine.co

@@ -39,6 +39,19 @@ const jsonLd = {
       isPartOf: { "@id": "https://alternine.co/#website" },
     },
     {
+      "@type": "Service",
+      "@id": `${pageUrl}#service`,
+      name: "Сайт за салон за красота с онлайн записване",
+      serviceType: "Изработка на уеб сайт с вградена система за записване",
+      provider: { "@id": "https://alternine.co/#organization" },
+      areaServed: ["BG", "EU"],
+      audience: {
+        "@type": "BusinessAudience",
+        audienceType: "Салони за красота, козметични студиа, мигли, вежди"
+      },
+      inLanguage: "bg"
+    },
+    {
       "@type": "FAQPage",
       "@id": `${pageUrl}#faq`,
       mainEntity: [
